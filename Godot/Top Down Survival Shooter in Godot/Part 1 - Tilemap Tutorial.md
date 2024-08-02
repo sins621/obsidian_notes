@@ -7,6 +7,8 @@ Create a Tile Map Node and rename it to "World" with `F2`.
 ![[Import Grass Asset.png]]
 ## 2. Set the Tile Map Texture to the Grass Asset.
 ![[Set Tilemap Texture.png]]
+Important!!!!!!!!!!!!
+When creating a new tileset be be sure to specify the correct size.
 ![[Drag Grass into Tileset.png]]
 ![[Tile Split.png]]
 
