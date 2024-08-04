@@ -94,3 +94,90 @@ func _input(event):
 		$Label.modulate = Color.GREEN
 ```
 
+# Variables (1.0)
+
+Variables are essentially containers that hold information.
+
+In the case of a **Player Character** we could use variables to hold information as as the **name**, **health**, **damage**, and if the player is **alive or not**.
+
+Let's make a **Health** variable:
+
+Near the top of our script we can declare a health variable and then print it's value in the `_ready()` function.
+
+```gdscript
+var health = 100
+
+func _ready():
+	print(health)
+```
+
+## Modifying Variables
+We can also make changes to our variable before printing it such as assigning a new value:
+```gdscript
+var health = 100
+
+func _ready():
+	health = 40
+	print(health)
+```
+
+Assign to a calculation:
+```gdscript
+var health = 100
+
+func _ready():
+	health = 20+30
+	print(health)
+```
+
+Add:
+```gdscript
+var health = 100
+
+func _ready():
+	health += 20
+	print(health)
+```
+
+Subtract:
+```gdscript
+var health = 100
+
+func _ready():
+	health -= 10
+	print(health)
+```
+
+Multiply:
+```gdscript
+var health = 100
+
+func _ready():
+	health *= 4
+	print(health)
+```
+
+Divide:
+```gdscript
+var health = 100
+
+func _ready():
+	health /= 20
+	print(health)
+```
+
+## Adjusting Variable Values with an Input Actions
+
+Let's look at an example where our player takes some damage and we want to subtract the damage from our health. Let's try decreasing our health value whenever we press the action we created earlier.
+
+```gdscript
+var health = 100
+
+func _input(event):
+	if event.is_action_pressed("my_action"):
+		health-=20
+		print(health)
+```
+
+# If-statememnts
+
