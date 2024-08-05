@@ -411,3 +411,134 @@ func jump():
 # JUMP!
 ```
 
+We can use functions for much more than this, they can have inputs and outputs. In code we call the input we give our function `parameters` and the output is called `returns`.
+![[Functions, Parameters and Returns.png]]
+Let's make a function that adds together two numbers:
+```gdscript
+func add(num1, num2):
+	var result = num1 + num2
+	print(result)
+```
+
+You provide the parameters inside the () brackets after the function name, "add" in this case and provide the return at the end of the function which in this case is the `print()` command.
+
+Now we must call this function so that it is executed, let's call it in the `_ready()` function:
+```gdscript
+func _ready():
+	add(3,8)
+	add(245,111)
+
+func add(num1, num2):
+	var result = num1 + num2
+	print(result)
+
+# Output
+# 11
+# 356
+```
+
+Notice the numbers passed through to the function. Now in this example we aren't **actually** returning the result so it can be used elsewhere. 
+
+Let's replace the print statement with `return result` so that we can store it in a variable:
+```gdscript
+func _ready():
+	var result = add(3, 5)
+	print(result)
+
+func add(num1, num2):
+	var result = num1 + num2
+	return result
+
+# Output
+# 8
+```
+
+Because we have access to the returned value in the `_ready()` function we can do more with it like add more numbers to it:
+```gdscript
+func _ready():
+	var result = add(3, 5)
+	result = add(result, 10)
+	print(result)
+
+func add(num1, num2):
+	var result = num1 + num2
+	return result
+
+# Output
+# 18
+```
+
+Just like when declaring variables, we can statically type parameters to indicate that they are intended to work with specific data types:
+```cpp
+func _ready():
+	var result = add(3, 5)
+	result = add(result, 10)
+	print(result)
+
+func add(num1: int, num2: int) -> int:
+	var result = num1 + num2
+	return result
+```
+
+The arrow `->` specifies that the return type is also an integer.
+
+# Random Numbers:
+
+Getting random numbers is very easy, the function `randf()` returns a random number between 0 and 1. This is great for assigning probabilities to your code. Say we are assigning loot to the player and we want to value some loot rarer than others.
+
+In this case we could create a `roll` variable and set it equal to `randf()`
+
+	var roll = randf()
+
+Then we could check the value rolled with an if statement to inform the player of the different rarities of loot they have recieved:
+```gdscript
+func _ready():
+	var roll = randf()
+	if roll <= 0.8:
+		print("You foudn a COMMON item.")
+	else:
+		print("You found a RARE item.")
+```
+
+Now there is an 80% chance of rolling a common item and a 20% chance of rolling a rare item.
+
+We can also use `randf_range(num1: float,num2: float)` or `randf_range(num1: int, num2: int)` to return a random float or integer between a minimum or maximum value that we specify.
+
+Let's look at the example of assigning a random height to a character:
+```gdscript
+func _ready():
+	var character_height = randi_range(140,210)
+	print("Your character is" + str(character_height) + "cm tall.")
+```
+
+# Documentation
+
+GDScript is actually pretty well documented. One of the really cool things about it is that the documentation is linked with the editor. If you hold down the `ctrl` key and click on something you would like to know more about, such as the `randi_range()` function, it opens up will open up the documentation right in the editor.
+![[View Documentation.png]]
+# Arrays
+
+Sometimes you want a variable that can hold more than one thing, sometimes you might want to store a whole list of elements, for this we use Arrays. 
+
+Defining an Array is very easy, let's make one to hold items in an inventory:
+```gdscript
+var items = []
+```
+
+Creating a variable and assigning it to square brackets `[]` creates an empty array. We can then add elements inside the square brackets and separate them by commas:
+```gdscript
+var items = ["Potion", 3, 6]
+```
+
+Notice how unlike many other languages, GDScript has no problem mixing data types with an Array.
+
+But if you want to constrain an Array to a specific type we can of course statically type it:
+```gdscript
+var items: Array[String] = ["Potion", "Feather", "Stolen harp"]
+```
+
+The way we access elements inside an Array is by using an index. When you add an element to an Array it is automatically assigned a number based on it's position in the Array. In this case the first element `"Potion"` has an index of `0`, `"Feather"` has an index of `1` and `"Stolen harp"` has an index of `2`. 
+
+To access and print the first element in our array we need to enter the following command:
+```gdscript
+
+```
