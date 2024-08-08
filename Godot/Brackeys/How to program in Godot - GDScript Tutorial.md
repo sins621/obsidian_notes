@@ -644,4 +644,27 @@ while glass < 0.5:
 print ("The glass is now half full")
 ```
 
- In this example we never increment glass 
+ In this example we never increment glass and so the condition to exit the loop will never be met, meaning that the program will run endlessly.
+
+Speaking of exiting a loop, we can use the `break` and `continue` keywords to work through our loops.
+
+`break` immediately exits the loop while `continue` immediately skips to the next iteration of the loop.
+
+```gdscript
+var glass := 0.0
+
+while glass < 0.5:
+	glass += randf_range(0.01, 0.2)
+	if glass > 0.2:
+		break
+	print(glass)
+
+print ("The glass is now half full")
+
+# Output
+# 0.05335741050542
+# 0.15283565775221
+# The glass is now half full
+```
+
+Here you can see we prematurely exited the loop before reaching 0.5 by breaking from the loop when going above 0.2.
