@@ -540,5 +540,108 @@ The way we access elements inside an Array is by using an index. When you add an
 
 To access and print the first element in our array we need to enter the following command:
 ```gdscript
+var items: Array[String] = ["Potion", "Feather", "Stolen harp"]
+print(items[0])
 
+# Output
+# Potion
 ```
+
+We can also modify/reassign elements in the Array.
+
+Let's replace "Feather" and "Stolen harp":
+```gdscript
+var items: Array[String] = ["Potion", "Feather", "Stolen harp"]
+items[1] = "Smelly sock"
+items[2] = "Staff"
+```
+
+Let's remove an element of the array with:
+```gdscript
+items.remove(1)
+```
+
+Let's add a new item on to the end of the Array with:
+```gdscript
+items.append("Overoowered sword")
+```
+
+# Loops
+
+Loops allow us to repeat code a number of times with small variations. They are perfect for iterating through all elements in an Array. If for example if we wanted to print out all the items in the Array we created earlier, we can do that easily by using a `for` loop.
+
+```gdscript
+for item in items:
+	print(item)
+
+# Output
+# Potion
+# Feather
+# Stolen harp
+```
+
+This is cool because we can have any number of items in our Array, the code will work just fine.
+
+We can also add more functionality, say to only print items that are more than 6 letters long:
+```gdscript
+for item in items:
+	if item.length() > 6:
+		print(item)
+
+# Output
+# Feather
+# Stolen harp
+```
+
+We can also create loops that run a certain number of times:
+```gdscript
+for n in 8:
+	print(n)
+
+# Output
+# 0
+# 1
+# 2
+# 3
+# 4
+# 5
+# 6
+# 7
+```
+
+Here we can see that the variable n will increment 8 times starting at 0.
+
+Another type of loop is the `while` loop. This repeats as long as a certain condition is met. Let's use a `while` loop to fill up a glass halfway.
+```gdscript
+var glass := 0.0
+
+while glass < 0.5:
+	glass += randf_range(0.01, 0.2)
+	print(glass)
+
+print ("The glass is now half full")
+
+# Output
+# 0.0326635588798
+# 0.07918387846179
+# 0.21120415094719
+# 0.24983830960808
+# 0.38174647293875
+# 0.54381938831221
+# The glass is now half full
+```
+
+In this example we are adding a random value between 0.01 and 0.2 every time we loop until the value in glass is more than 0.5 and then print that the glass is now half full.
+
+Now we actually have to be really careful when losing while loops. It's important not to create an infinite loop. These can be tricky to avoid and can very easily crash our program.
+
+```gdscript
+var glass := 0.0
+
+while glass < 0.5:
+	# glass += randf_range(0.01, 0.2)
+	print(glass)
+print ("The glass is now half full")
+```
+
+ In this example we never increment glass 
