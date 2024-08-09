@@ -668,3 +668,74 @@ print ("The glass is now half full")
 ```
 
 Here you can see we prematurely exited the loop before reaching 0.5 by breaking from the loop when going above 0.2.
+# Dictionaries
+
+While Arrays are great for storing lists of elements it can sometime be confusing to access each element with an index. Sometimes it makes more sense to use a dictionary. Dictionaries hold what we call key value pairs:
+![[Key and Value Pairs.png]]
+In real life we use a dictionary to look up the meaning of words. They key in this example is the word and the value is the definition:![[Key Value Explanation.png]]
+Dictionaries in GDScript work the exact same way. Creating a dictionary is really easy:
+```gdscript
+ var my_dict = {}
+```
+
+Now we have declared an empty dictionary. Let's add some values to it where we are keeping track of different players and their levels:
+```gdscript
+var my_dict = {"Crook": 1, "Villain": 35, "Boss":100}
+```
+
+If one line becomes too long to be easily readable you can split it up with tabs:
+```gdscript
+var players = {
+	"Crook": 1, 
+	"Villain": 35, 
+	"Boss": 100,
+	}
+```
+
+Not that it is good etiquette to add a comment to the end of the last entry when doing this so that it is easy to add more entries. I've also renamed the dictionary to players.
+
+Then to call the value from the dictionary we simply use the key:
+```gdscript
+print(players["Villain"])
+
+# Output
+# 35
+```
+
+You can just as easily add a new value or modify an entry:
+```gdscript
+# Modify
+players["Villain"] = 50
+# Add
+players["Dwayne"] = 999
+```
+
+Just like with Arrays we can loop over a dictionary with a `for` loop:
+```gdscript
+for username in players:
+	print(username + ": " + str(players[username]))
+
+# Output
+# 
+```
+
+To avoid an error we will need to cast the usernames to a string with `str()`. Note that the `username` was not declared as they key and need not be declared as a key. When used in a range-based `for` loop such as this it will be accepted as the name of the key for easier readability.
+
+Now just like with Arrays you can have multiple data types of keys and values within the same dictionary. Even cooler is that you can have an Array or dictionary inside another dictionary. This might sound really abstract but it's actually really cool and often comes in handy.
+
+Say for example we don't just want to store the level of each player, but also other info like their health:
+```gdscript
+var players = {
+	"Crook":   {"Level": 1, "Health": 80},
+	"Villain": {"Level": 50, "Health": 150},
+	"Boss":    {"Level": 100, "Health": 500},
+	}
+```
+
+Now we can access the values in our dictionary by using the two keys:
+```gdscript
+print(players["Boss"]["Health"])
+
+# Output
+# 
+```
