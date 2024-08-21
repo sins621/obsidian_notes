@@ -81,3 +81,22 @@ int main(){
 In this case the `zero_array()` function receives the location of the array and the size of the array. We can simply iterate through the array and set each array element to zero, notice that when we print the array in `main()` after we call `zero_array()` all the array elements are now zero. 
 
 So let's get back to seeing what we can do to have the compiler help us so we don't change the an array when we don't want to.
+# Const Parameters
+
+We can tell the compiler that the function parameters are const(read-only).
+
+This could be useful in the `print_array()` function since it should **NOT** modify the array.
+
+```cpp
+void print_array(const int numbers[], size_t size){
+	for (size_t i{0}; i < size; ++i)
+		cout << numbers[i] << endl;
+	numbers[i] = 0; /* any attempt to modify 
+	the array will result in a compiler error*/
+}
+```
+
+In this case notice that we included the `const` keyword right before the array parameter declaration, that's it, now if we try to modify any array element as we do in the assignment statement a compiler error will occur. Depending on your compiler the error message will say something along the lines of "Error, trying to assign to a read-only value".
+
+The idea of passing the location of a variable to a function instead of the valuable of the variable is fundamental in understanding the next topic we'll talk about, it's called pass by reference. 
+
