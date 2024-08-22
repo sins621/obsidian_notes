@@ -99,4 +99,89 @@ void print_array(const int numbers[], size_t size){
 In this case notice that we included the `const` keyword right before the array parameter declaration, that's it, now if we try to modify any array element as we do in the assignment statement a compiler error will occur. Depending on your compiler the error message will say something along the lines of "Error, trying to assign to a read-only value".
 
 The idea of passing the location of a variable to a function instead of the valuable of the variable is fundamental in understanding the next topic we'll talk about, it's called pass by reference. 
+# Coding Exercise: Passing Arrays to Functions - Print a Guest List
 
+In this exercise you will create a program that will be used to `print` the `guest_list` to an event and then `clear` the `guest_list` when the event is over.
+
+Begin by completing the function prototypes `print_guest_list` and `clear_guest_list` which are both `passed an array of std::string and a size_t value`. Ensure that the array cannot be modified within the `print_guest_list` function by using the keyword `const` in the parameter list.
+
+Now that the function prototypes have been declared, at the bottom of the file define both functions.
+
+Both the `print_guest_list` and `clear_guest_list` functions will be passed the `array argument` `guest_list` and the `size_t argument` `guest_list_size` which have both been provided to you.
+
+The `print_guest_list` function should print the values contained within the `guest_list` from left to right with each element being printed on a new line.  Use a `for loop` to iterate through the array.
+
+The `clear_guest_list` function should replace each element of the array with the string value `" "`, a single space.  Use a `for loop` to iterate through the array.
+
+Now, from the function body of `event_guest_list`, make the following function calls in this order:
+
+`print_guest_list`
+
+`clear_guest_list`
+
+`print_guest_list`
+
+and passing the `array argument` `guest_list` and the `size_t argument` `guest_list_size` with each function call.
+
+You can find my solution by clicking on the **solution.txt** file on the left pane. But please make sure you give it a go yourself first, and only check the solution if you really get stuck.
+
+```cpp
+#include <iostream>
+#include <string>
+#include <typeinfo>
+using namespace std;
+
+//----DO NOT MODIFY THE CODE ABOVE THIS LINE----
+//----WRITE THE FUNCTION PROTOTYPES BELOW THIS LINE----
+
+string print_guest_list(            );//----WRITE THE FUNCTION PARAMETER LIST WITHIN THE PARENTHESES
+void clear_guest_list(            );//----WRITE THE FUNCTION PARAMETER LIST WITHIN THE PARENTHESES
+                                      
+//----WRITE THE FUNCTION PROTOTYPES ABOVE THIS LINE----                                      
+//----DO NOT MODIFY THE CODE BELOW THIS LINE----
+
+void event_guest_list() {
+
+    string guest_list[] {"Larry", "Moe", "Curly"};
+    size_t guest_list_size {3};
+
+    //----DO NOT MODIFY THE CODE ABOVE THIS LINE----
+    //----WRITE THE FUNCTION CALLS BELOW THIS LINE----
+
+    
+    
+    
+
+    //----WRITE THE FUNCTION CALLS ABOVE THIS LINE----
+    //----DO NOT MODIFY THE CODE BELOW THIS LINE----
+}
+
+//----DO NOT MODIFY THE CODE ABOVE THIS LINE----
+//----WRITE THE FUNCTION DEFINITION BELOW THIS LINE----
+
+string print_guest_list(            ) {//----WRITE THE FUNCTION PARAMETER LIST WITHIN THE PARENTHESES
+
+    //----WRITE THE FUNCTION BODY BELOW THIS LINE----
+    
+    
+    
+        
+    //----WRITE THE FUNCTION BODY ABOVE THIS LINE----
+    //----DO NOT MODIFY THE CODE BELOW THIS LINE----
+    return typeid(guest_list).name();
+}
+
+//----DO NOT MODIFY THE CODE ABOVE THIS LINE----
+//----WRITE THE FUNCTION DEFINITION BELOW THIS LINE----
+
+void clear_guest_list(            ) {//----WRITE THE FUNCTION PARAMETER LIST WITHIN THEPARENTHESES
+
+    //----WRITE THE FUNCTION BODY BELOW THIS LINE----
+    
+    
+    
+    
+    //----WRITE THE FUNCTION BODY ABOVE THIS LINE----
+    //----DO NOT MODIFY THE CODE BELOW THIS LINE----
+}
+```
