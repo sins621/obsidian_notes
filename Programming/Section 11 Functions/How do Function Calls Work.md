@@ -87,7 +87,7 @@ Let's visualize how the values are changed on the stack.
 ![](Pictures/func2%20part%201.png)
 
 - `y` and `z` are copied from `a` and `b` however `x` is assigned to the memory location of `result` and is equal to it's exact value. `x` is an *alias* for `result`.
-- 
+ 
 ![](Pictures/func2%20part%202.png)
 
 ### `func2()` back to `func1()`
