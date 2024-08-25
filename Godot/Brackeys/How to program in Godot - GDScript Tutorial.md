@@ -28,21 +28,21 @@ GDScript is also **case-sensitive** meaning `Print()` would result in an error i
 First add a node to modify, you can use a label.
 
 
-![[Add Label Node.png]]
-![[Center Label.png]]
-![[Enlarge the Label.png]]
-![[Write Text and Center.png]]
-![[Override Font Size.png]]
+![](Pictures/Add%20Label%20Node.png)
+![](Pictures/Center%20Label.png)
+![](Pictures/Enlarge%20the%20Label.png)
+![](Pictures/Write%20Text%20and%20Center.png)
+![](Pictures/Override%20Font%20Size.png)
 ## Edit the Text of the Label through Script
 
 Before we can edit the label through script, we need two things. We need a reference to the label, and we need to access the property in the label that we need to change. In this case, the `text` property.
 
-![[Text Property on Hover.png]]
+![](Pictures/Text%20Property%20on%20Hover.png)
 
 Hovering over the Text property in the Inspector displays the property to be used in script.
 
 You can reference `Label` in the `main.gd` script by dragging the node into the script.
-![[Reference to Node by Drag.png]]
+![](Pictures/Reference%20to%20Node%20by%20Drag.png)
 Then you can access the text property and update it by using `.text` and the assignment operator `=`.
 
 ## Editing color through Script
@@ -54,18 +54,18 @@ $Label.modulate = Color.GREEN
 ```
 
 Congratulations, you have successfully printed a green "Hello, world!".
-![[Green Hello, world.png]]
+![](Pictures/Green%20Hello,%20world.png)
 
 # Input
 
 Let's say we wanted to turn the label red when pressing the space-bar key. To do this we first need to set up an `input-action`.
 
 Navigate to `Project`, `Project Settings` and then `Input Map`
-![[Input Map Settings.png]]
+![](Pictures/Input%20Map%20Settings.png)
 Here we can add `Actions`. Actions allow us to bind keys to something we want to happen.
 
 First type the name of the action under `Add New Action`, press the `Add` key. Then press the `+` button next to the action you have created to assign a keybinding to it.
-![[Assign Action.png]]
+![](Pictures/Assign%20Action.png)
 ## Create an Input Function
 
 Write the following line beneath the `_ready()` function but **not** indented within it.
@@ -268,7 +268,7 @@ func _ready():
 ```
 
 To comment out multiple lines of code simply highlight them with your mouse cursor, right click and select the option.
-![[Toggle Comment.png]]
+![](Pictures/Toggle%20Comment.png)
 # Variables 2.0
 
 When declaring a variable we need to think about where we do so. if we declare a variable inside an if statement for example we can only use the variable inside **that** if statement. This is called _scope_. If you want to use variables in many places in your script make sure to declare it at the top so that it is a script wide variable, meaning it can be accessed anywhere within your script.
@@ -361,9 +361,9 @@ var damage := 15
 This is called inferred typing and the result is exactly the same. The variable is still static, Godot simply recognizes in this case that 15 is a whole number and sets the variable to a type of `int`.
 
 This also means that the variable can not change to another type. If you were to try and set it to a string in this instance, you would get an error.
-![[Illegal Typing Error.png]]
+![](Pictures/Illegal%20Typing%20Error.png)
 Adding `@export` in front of a variable will allow us to set it using the inspector. The value we save in the script will just be the default value.
-![[Variable in Inspector.png]]
+![](Pictures/Variable%20in%20Inspector.png)
 
 Sometimes you want to define a variable that cannot change. For this we use a constant:
 
@@ -374,7 +374,7 @@ const GRAVITY = -9.81
 It's standard practice to name constants with capital letters.
 
 We can try to change the value of `GRAVITY` like any other variable but if we do that we will be presented with an error:
-![[Const Reassign Error.png]]
+![](Pictures/Const%20Reassign%20Error.png)
 # Functions
 
 Functions are the bread and butter of programming, they allow you to bundle your code into small reusable packages. so far we have been using some of Godot's built in functions like `func _ready():` and `func _input():`. Notice how these are prefixed with an underscore. This is to show that they are not activated or called by us but by the engine itself. 
@@ -412,7 +412,7 @@ func jump():
 ```
 
 We can use functions for much more than this, they can have inputs and outputs. In code we call the input we give our function `parameters` and the output is called `returns`.
-![[Functions, Parameters and Returns.png]]
+![](Pictures/Functions,%20Parameters%20and%20Returns.png)
 Let's make a function that adds together two numbers:
 ```gdscript
 func add(num1, num2):
@@ -514,7 +514,7 @@ func _ready():
 # Documentation
 
 GDScript is actually pretty well documented. One of the really cool things about it is that the documentation is linked with the editor. If you hold down the `ctrl` key and click on something you would like to know more about, such as the `randi_range()` function, it opens up will open up the documentation right in the editor.
-![[View Documentation.png]]
+![](Pictures/View%20Documentation.png)
 # Arrays
 
 Sometimes you want a variable that can hold more than one thing, sometimes you might want to store a whole list of elements, for this we use Arrays. 
@@ -671,8 +671,8 @@ Here you can see we prematurely exited the loop before reaching 0.5 by breaking 
 # Dictionaries
 
 While Arrays are great for storing lists of elements it can sometime be confusing to access each element with an index. Sometimes it makes more sense to use a dictionary. Dictionaries hold what we call key value pairs:
-![[Key and Value Pairs.png]]
-In real life we use a dictionary to look up the meaning of words. They key in this example is the word and the value is the definition:![[Key Value Explanation.png]]
+![](Godot/Brackeys/Pictures/Key%20and%20Value%20Pairs.png)
+In real life we use a dictionary to look up the meaning of words. They key in this example is the word and the value is the definition:![[Godot/Brackeys/Pictures/Key Value Explanation.png]]
 Dictionaries in GDScript work the exact same way. Creating a dictionary is really easy:
 ```gdscript
  var my_dict = {}

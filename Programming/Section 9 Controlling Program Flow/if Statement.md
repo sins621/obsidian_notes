@@ -8,7 +8,7 @@ if (expr)
 
 ### Example 1:
 
-![[if Statement Example 1.png]]
+![](Programming/Section%209%20Controlling%20Program%20Flow/Pictures/if%20Statement%20Example%201.png)
 
 ### Example 2:
 
@@ -25,7 +25,7 @@ if (health < 100 && playe_healed)
 
 ## Block Statement:
 
-![[Block Statement.png]]
+![[Programming/Section 9 Controlling Program Flow/Pictures/Block Statement.png]]
 ```cpp
 {
 	//variable declarations
@@ -43,7 +43,7 @@ if (health < 100 && playe_healed)
 
 ### Condition:
 
-![[if Statement Exercise 1 Condition.png]]
+![[Programming/Section 9 Controlling Program Flow/Pictures/if Statement Exercise 1 Condition.png]]
 1. Greater than 10.
 2. Less than 100.
 3. Between 10 and 100.

@@ -24,24 +24,24 @@ Body:
 
 # Example with no Parameters
 
-![[Function Parameters.png]]
+![](Pictures/Function%20Parameters.png)
 Here we have a simple function definition, notice the name of the function is `function_name`. After the function name we have open and closed parenthesis, in this case this function **expects no parameters** so there's nothing inside the parenthesis. This function **returns an integer**, we specify that by providing the type of return value before the function name. Finally we have the **body** of the function which consists of statements inside curly braces. You can see that this is same syntax as we've used in our main function. 
 
 Of course we can have functions that return nothing, expect many parameters and so fourth. The syntax for all of them is very regular and exactly what you would expect. 
 
 Let's see another one.
 # Example with Parameters
-![[Function with Parameter.png]]
+![](Pictures/Function%20with%20Parameter.png)
 In this case we have the same function named `function_name` but this time it expects exactly one **parameter**, that parameter is an integer type and it's available for us to use in the **body** of the function.
 # Example with no Return Type (void)
-![[Function with no Return Type.png]]
+![](Pictures/Function%20with%20no%20Return%20Type.png)
 In this example we have a function that returns nothing when called. In this case we provide the keyword `void` before the function name, this tells the compiler that there is no **return type**. With `void` functions we can still have simple return statements in the body of the function, but they're totally optional and not often written. If there is no return statement, it's understood that the function returns after the last statement is executed. 
 
 Pretty simple syntax, let's look at one more.
 
 # Example with Multiple Parameters
 
-![[Example with Multiple Parameters.png]]
+![](Pictures/Example%20with%20Multiple%20Parameters.png)
 In this example we see a function definition for `function_name` that expects multiple parameters. In this case the functions expects two parameters, an integer and a standard string. When the function is called these two parameters must be provided as arguments in the same order as specified in the parameter list.
 
 # Example with no Return Type and no Parameters
@@ -103,7 +103,7 @@ int main(){
 Of course we can define as many functions as we need in our applications to help modularize our program. In this case we're defining 3 functions, `say_world()`, `say_hello()` and `main`. Execution always begins with the main function, so in this case `main` calls `say_hello()` so we execute `say_hello()` and we display "Hello" to the console. But then `say_hello()` calls `say_world()` and we display " World". So this program displays "Hello World" to the console. 
 
 Here's the same example with some other output statements sprinkled in:
-![[Calling a Function.png]]
+![](Pictures/Calling%20a%20Function.png)
 Again, execution always begins with the main function. So in this case `main()` calls `say_hello()` so we execute `say_hello()`. Remember that when `say_hello()` is finished we need to complete the code in `main()`. So we display "Hello" to the console, then `say_hello()` calls `say_world()` and when `say_world()` is done we complete the code in `say_hello()`. So we execute `say_world()` and it displays " World" to the console followed by "Bye from say_world" and then we go back to where we left off in `say_hello()` and print "Bye from say_hello" to console. Then we go back to where we left off in `main()` and print "Bye from main" to console and our program terminates. 
 
 You can walk through this code and see exactly what's happening.

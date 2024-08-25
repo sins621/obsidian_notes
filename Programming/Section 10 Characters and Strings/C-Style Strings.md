@@ -14,26 +14,26 @@
 
 # How C Style Strings are Stored in Memory:
 
-![[How C Strings Stored in Memory.png]]
+![](Pictures/How%20C%20Strings%20Stored%20in%20Memory.png)
 
 - These characters are stored in a contagious block of memory that can be accessed as an array. 
 - Notice "C++ is fun" has 10 characters but the compiler allocated 11 characters for the array because it needed space for the `null` character at the end.
 
 ## Declaring Variables:
 
-![[Frank in Memory.png]]
+![](Pictures/Frank%20in%20Memory.png)
 
 - In this example we're declaring an Array and initializing it to Frank using initialize list syntax as we've been doing with integers and other types.
 - Notice the C++ Compiler will allocate 6 characters to this Array since it needs to terminate the string with a `null` character.
 - Notice the size of the Array is **fixed** so if you wanted to add a Y to "Frank" and create "Franky" you couldn't, without having some potential problems since the new string would not be `null` terminated.
 
-![[Initialize String to 8.png]]
+![](Pictures/Initialize%20String%20to%208.png)
 
 - In this example we are explicitly asking the compiler to allocate 8 characters for the character Array and we're initializing it to Frank.
 - In this case it will initialize the array with "F" "r" "a" "n" "k" and the rest of the space will be zeroed out with `null` characters.
 - In this case you wanted to change the character at index 5 which is that first `null` character to a lower case 'y' it would be just fine since the string now contains "Franky" and is still `null` terminated.
 
-![[Initialize without Data.png]]
+![](Pictures/Initialize%20without%20Data.png)
 
 - In this example we ask the compiler to allocate an array of 8 characters and we don't initialize them. This could be very problematic because if you use this array as a string all C-Style string functions expect a `null` character and here there may or may not be one as we don't know what the data in the array is.
 - Suppose we wanted to display the string, how are C-Style strings displayed? You start at the first element of the Array and iterate through it until reaching a `null` character but in this instance that can go on for a very long time before a `null` character is reached because it is not specified.

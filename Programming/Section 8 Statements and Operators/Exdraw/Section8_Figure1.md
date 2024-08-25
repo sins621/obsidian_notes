@@ -9,7 +9,7 @@ tags: [excalidraw]
 
 # Text Elements
 # Embedded files
-f8d8796a1ab7e542239f9be05630e4d5265703b3: [[Pasted Image 20240509003017_780.png]]
+f8d8796a1ab7e542239f9be05630e4d5265703b3: ![[Programming/Section 8 Statements and Operators/Exdraw/Pictures/Pasted Image 20240509003017_780.png]]
 
 %%
 # Drawing
