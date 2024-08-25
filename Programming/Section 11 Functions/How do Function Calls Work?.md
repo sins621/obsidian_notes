@@ -16,6 +16,7 @@
 # The Stack:
 
 ![](Pictures/The%20Stack.png)
+
 # Example: Two Function Stack with Reference
 
 ```cpp
@@ -70,18 +71,30 @@ There are other ways to achieve the same results :)
 Let's visualize how the values are changed on the stack.
 
 ### `main()` -> `func1()`:
+
 ![](Pictures/Stack%20main%20to%20func1.png)
+
 ### `func1()` to `func2()`:
+
 ![](Pictures/func1%20to%20func2%20one.png)
+
 - Copies of the values of `x` and `y` are made into `a` and `b`.
+
 ![](Pictures/func1%20to%20func2%20part%202.png)
+
 ### `func2()`
+
 ![](Pictures/func2%20part%201.png)
+
 - `y` and `z` are copied from `a` and `b` however `x` is assigned to the memory location of `result` and is equal to it's exact value. `x` is an *alias* for `result`.
+- 
 ![](Pictures/func2%20part%202.png)
+
 ### `func2()` back to `func1()`
 
 ![](Pictures/func2%20to%20func1.png)
+
 - `func2()` comes off the stack and we pickup where we left off returning `result` which is now 60.
 ### back to `main()`
+
 ![](Pictures/back%20to%20main.png)
