@@ -1,0 +1,2 @@
+- A recursive function is a function that calls itself.
+	- Either directly or indirectly through function   

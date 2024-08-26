@@ -1,4 +1,6 @@
 [
   "gdscript-syntax-highlighting",
-  "consistent-attachments-and-links"
+  "consistent-attachments-and-links",
+  "tabout",
+  "obsidian-git"
 ]
