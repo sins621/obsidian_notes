@@ -1,5 +1,7 @@
 [
   "gdscript-syntax-highlighting",
   "consistent-attachments-and-links",
-  "tabout"
+  "tabout",
+  "calendar",
+  "obsidian-paste-image-rename"
 ]
