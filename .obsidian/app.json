@@ -5,5 +5,6 @@
   "alwaysUpdateLinks": true,
   "useMarkdownLinks": true,
   "newLinkFormat": "relative",
-  "newFileLocation": "current"
+  "newFileLocation": "current",
+  "promptDelete": false
 }
