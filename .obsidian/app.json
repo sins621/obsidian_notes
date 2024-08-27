@@ -3,6 +3,7 @@
   "autoPairBrackets": true,
   "vimMode": true,
   "alwaysUpdateLinks": true,
-  "useMarkdownLinks": false,
-  "newLinkFormat": "shortest"
+  "useMarkdownLinks": true,
+  "newLinkFormat": "relative",
+  "newFileLocation": "current"
 }

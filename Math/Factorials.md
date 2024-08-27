@@ -11,3 +11,4 @@ Now let's simplify the factorial by multiplying the products of it's parts.
 ![](Pictures/6%20Factorial.png)
 Again, 1 falls away, 30 multiplied by two is 60 and 60 multiplied by 12 is 720.
 
+![](Pictures/test%20rename.png)
