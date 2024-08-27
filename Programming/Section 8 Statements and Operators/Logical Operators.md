@@ -61,7 +61,7 @@ expr1 || expr2 || expr3
 
 # Example: Bounds Checking
 ## Inside Bounds:
-![](Programming/Section%208%20Statements%20and%20Operators/Pictures/Sectio8_LogicalOperators_BoundsChecking.png)
+![](Pictures/Sectio8_LogicalOperators_BoundsChecking.png)
 
 ### Output (true):
 
@@ -81,7 +81,7 @@ Enter an integer - The bounds are 10 and 20:
 
 ## Outside Bounds:
 
-![[Programming/Section 8 Statements and Operators/Pictures/Section8_LogicalOperators_OutOfBounds.png]]
+![](Pictures/Section8_LogicalOperators_OutOfBounds.png)
 
 ## Output:
 
@@ -93,7 +93,7 @@ Enter an integer - The bounds are 10 and 20:
 
 ## On Bounds:
 
-![[Programming/Section 8 Statements and Operators/Pictures/Section8_LogicalOperators_OnBounds.png]]
+![](Pictures/Section8_LogicalOperators_OnBounds.png)
 
 ## Output:
 

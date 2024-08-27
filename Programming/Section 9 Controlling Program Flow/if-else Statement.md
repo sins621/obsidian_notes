@@ -9,7 +9,7 @@ else
 
 - if the expression is false then execute statement2
 
-![](Programming/Section%209%20Controlling%20Program%20Flow/Pictures/if-else%20Statement%20Example%201.png)
+![](Pictures/if-else%20Statement%20Example%201.png)
 ```cpp
 if (num > 10)
 	cout << "num is greater than 10";
@@ -22,7 +22,7 @@ else
 	++health;
 ```
 
-![[Programming/Section 9 Controlling Program Flow/Pictures/if-else Statement Example 2.png]]
+![](Pictures/if-else%20Statement%20Example%202.png)
 ## if-else-if construct
 
 ```cpp

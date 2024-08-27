@@ -671,8 +671,8 @@ Here you can see we prematurely exited the loop before reaching 0.5 by breaking 
 # Dictionaries
 
 While Arrays are great for storing lists of elements it can sometime be confusing to access each element with an index. Sometimes it makes more sense to use a dictionary. Dictionaries hold what we call key value pairs:
-![](Godot/Brackeys/Pictures/Key%20and%20Value%20Pairs.png)
-In real life we use a dictionary to look up the meaning of words. They key in this example is the word and the value is the definition:![[Godot/Brackeys/Pictures/Key Value Explanation.png]]
+![](Pictures/Key%20and%20Value%20Pairs.png)
+In real life we use a dictionary to look up the meaning of words. They key in this example is the word and the value is the definition:![](Pictures/Key%20Value%20Explanation.png)
 Dictionaries in GDScript work the exact same way. Creating a dictionary is really easy:
 ```gdscript
  var my_dict = {}

@@ -56,7 +56,7 @@ int main (){
 1 < 2 : true
 1 <= 2 : true
 ```
-![](Programming/Section%208%20Statements%20and%20Operators/Pictures/Section8_Figure1.png)
+![](Pictures/Section8_Figure1.png)
 
 ## boolalpha:
 
@@ -110,4 +110,4 @@ Enter an integer that is less than or equal to 20 : 20
 num2 <= 20 is true
 ```
 
-![[Programming/Section 8 Statements and Operators/Pictures/Pasted image 20240509005214.png]]
+![](Pictures/Pasted%20image%2020240509005214.png)

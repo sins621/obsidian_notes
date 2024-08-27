@@ -15,7 +15,7 @@
 
  # Example - Factorials
 
-Here's a quick catch-up lesson on [[Factorials]].
+Here's a quick catch-up lesson on [Factorials](../../Math/Factorials.md).
 
 ```cpp
 0! = 1

@@ -280,7 +280,7 @@ for (auto c: "Frank")
 
 ### Example 6:
 
-![](Programming/Section%209%20Controlling%20Program%20Flow/Pictures/Range%20Based%20for%20loop%20Example%206.png)
+![](Pictures/Range%20Based%20for%20loop%20Example%206.png)
 
 **Output:**
 
@@ -949,7 +949,7 @@ for (int num1 {1}; num1 <= 10 ; ++ num1) {
 // Displays 10 x 10 Multiplication Tables
 ```
 
-![[Programming/Section 9 Controlling Program Flow/Pictures/Nested loop example.png]]
+![](Pictures/Nested%20loop%20example.png)
 ### Example 3: Iterate through 2D Array
 
 **Assign Values:**
