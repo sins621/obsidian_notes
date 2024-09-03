@@ -52,6 +52,8 @@ Let's look at calculating a Fibonacci number.
 
 # Example: Fibonacci Number
 
+Need a refresher? Read through this revision of [Fibonacci Numbers](../../Math/Fibonacci%20Numbers.md).
+
 ```
 Fib (0) = 0
 Fib (1) = 1
@@ -65,3 +67,26 @@ Fib (n) = Fib(n-1) + Fib(n-2)
 - Recursive Case:
 	- Fib(n) = Fib(n-1) + Fib(n-2)
 
+# In the IDE:
+
+```cpp
+#include <iostream>
+
+using namespace std;
+
+unsigned long long fibonacci (unsigned long long n){
+	if (n <= 1){
+		return n;        // base cases
+	}
+	return fibonacci(n-1) + fibonacci(n-2); // recursion
+}
+
+int main(){
+	cout << fibonacci(30) << endl; // 832040
+	return 0;
+}
+```
+
+Again, we're using unsigned long long in this case since Fibonacci can also produce huge numbers. Notice in the `main()` function we call `fibonacci()` and the result we expect back is `832040`.
+
+Now let's look at the `fibonacci()` function, notice that in the **base case** if `n` is less than or equal to `1` then we simply return `n`. So when `n` is `0` we return `0` and when `n` is `1` we return `1`. That handles both **base cases** in one step. We can easily rewrite this condition to explicitly check `n=0` and `n=1` but this achieves the same result. This base case is what stops the recursion, if `n` not `0` or `1` then we call `fibonacci()` again with both pieces of the problem definition.
