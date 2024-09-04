@@ -106,5 +106,17 @@ Notice how much the code looks exactly like the mathematical definition of Fibon
 - Anything that can be done recursively can be done iteratively.
 	- Stack overflow error.
 
-# In the IDE:
+# Example 1: Factorial Visualized
+
+Building up the stack for line 5 till the base case:
+
+![](Pictures/Recursive%20Functions%20-%20Factorial%20Visualized.png)
+
+Once we reach that point every stack is popped off one by one returning it's value:
+
+![](Pictures/Recursive%20Functions%20-%20First%20Stack%20Popped%20Off.png)
+
+![](Pictures/Recursive%20Functions%20-%20Second%20Function.png)
+
+![](Pictures/Recursive%20Functions%20-%20Final%20Stack%20Popped%20Off.png)
 
