@@ -17,7 +17,7 @@
 
 Here's a quick catch-up lesson on [Factorials](../../Math/Factorials.md).
 
-```cpp
+```
 0! = 1
 n! = n * (n-1)!
 ```
@@ -89,4 +89,22 @@ int main(){
 
 Again, we're using unsigned long long in this case since Fibonacci can also produce huge numbers. Notice in the `main()` function we call `fibonacci()` and the result we expect back is `832040`.
 
-Now let's look at the `fibonacci()` function, notice that in the **base case** if `n` is less than or equal to `1` then we simply return `n`. So when `n` is `0` we return `0` and when `n` is `1` we return `1`. That handles both **base cases** in one step. We can easily rewrite this condition to explicitly check `n=0` and `n=1` but this achieves the same result. This base case is what stops the recursion, if `n` not `0` or `1` then we call `fibonacci()` again with both pieces of the problem definition.
+Now let's look at the `fibonacci()` function, notice that in the **base case** if `n` is less than or equal to `1` then we simply return `n`. So when `n` is `0` we return `0` and when `n` is `1` we return `1`. That handles both **base cases** in one step. We can easily rewrite this condition to explicitly check `n=0` and `n=1` but this achieves the same result. This base case is what stops the recursion, if `n` not `0` or `1` then we call `fibonacci()` again with both pieces of the problem definition. Eventually the recursion will stop and the result will be returned to `main()`. 
+
+Notice how much the code looks exactly like the mathematical definition of Fibonacci. This is by design, let's look at a few thoughts on recursion:
+# Important Notes:
+
+- If a recursion doesn't eventually stop you will have infinite recursion.
+
+- Recursion can be resource intensive.
+
+- Remember the base case(s).
+	- They terminate the recursion.
+
+- Only use recursive solutions when it makes sense.
+
+- Anything that can be done recursively can be done iteratively.
+	- Stack overflow error.
+
+# In the IDE:
+
