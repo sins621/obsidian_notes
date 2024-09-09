@@ -1,6 +1,9 @@
 {
-  "cssTheme": "Minimal",
+  "cssTheme": "",
   "enabledCssSnippets": [
     "opacity"
-  ]
+  ],
+  "accentColor": "#77744d",
+  "monospaceFontFamily": "",
+  "showViewHeader": true
 }
