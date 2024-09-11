@@ -1,9 +1,12 @@
 {
-  "cssTheme": "",
+  "cssTheme": "Obsidian gruvbox",
   "enabledCssSnippets": [
     "opacity"
   ],
   "accentColor": "",
-  "monospaceFontFamily": "",
-  "showViewHeader": true
+  "monospaceFontFamily": "DMMono Nerd Font",
+  "showViewHeader": true,
+  "interfaceFontFamily": "DMMono Nerd Font",
+  "textFontFamily": "DMMono Nerd Font",
+  "nativeMenus": false
 }

@@ -30,3 +30,4 @@ Can't we just use the variable or function itself?
 
 - Can Access Specific Addresses in Memory.
 	- Useful in Embedded and Systems Applications.
+

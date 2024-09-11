@@ -1,12 +1,13 @@
 {
   "attachmentFolderPath": "./Pictures",
   "autoPairBrackets": true,
-  "vimMode": false,
+  "vimMode": true,
   "alwaysUpdateLinks": true,
   "useMarkdownLinks": true,
   "newLinkFormat": "relative",
   "newFileLocation": "current",
   "promptDelete": false,
   "showInlineTitle": true,
-  "showRibbon": true
+  "showRibbon": true,
+  "autoPairMarkdown": false
 }
