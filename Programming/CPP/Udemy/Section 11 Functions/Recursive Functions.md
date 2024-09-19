@@ -15,7 +15,7 @@
 
 # Example: Factorials
 
-Here's a quick catch-up lesson on [Factorials](../../Math/Factorials.md).
+Here's a quick catch-up lesson on [Factorials](../../../../Math/Factorials.md).
 
 ```
 0! = 1
@@ -52,7 +52,7 @@ Let's look at calculating a Fibonacci number.
 
 # Example: Fibonacci Number
 
-Need a refresher? Read through this revision of [Fibonacci Numbers](../../Math/Fibonacci%20Numbers.md).
+Need a refresher? Read through this revision of [Fibonacci Numbers](../../../../Math/Fibonacci%20Numbers.md).
 
 ```
 Fib (0) = 0

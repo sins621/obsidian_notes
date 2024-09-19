@@ -94,3 +94,64 @@ This table shows the equivalence between arrays and pointers. Notice that we can
 
 # Examples in the IDE
 
+```cpp nums
+#include <iostream>
+
+int main(){
+    int scores[]{100, 95, 89};
+    std::cout << "Value of scores: " << scores << std::endl;
+
+    int *score_ptr{scores};
+    std::cout << "Value of score_ptr: " << score_ptr << std::endl;
+
+    std::cout << "\nArray of subscript notation -------------------" 
+        << std::endl;
+    std::cout << scores[0] << std::endl;
+    std::cout << scores[1] << std::endl;
+    std::cout << scores[2] << std::endl;
+
+    std::cout << "\nPointer subscript notation -------------------" 
+        << std::endl;
+    std::cout << score_ptr[0] << std::endl;
+    std::cout << score_ptr[1] << std::endl;
+    std::cout << score_ptr[2] << std::endl;
+
+    std::cout << "\nPointer offset notation -------------------" 
+        << std::endl;
+    std::cout << *score_ptr << std::endl;
+    std::cout << *(score_ptr + 1) << std::endl;
+    std::cout << *(score_ptr + 2) << std::endl;
+
+    std::cout << "\nArray offset notation -------------------" 
+        << std::endl;
+    std::cout << *scores << std::endl;
+    std::cout << *(scores + 1) << std::endl;
+    std::cout << *(scores + 2) << std::endl;
+}
+```
+## Output:
+
+```
+Value of scores: 0x7fffffffd8fc
+Value of score_ptr: 0x7fffffffd8fc
+
+Array of subscript notation -------------------
+100
+95
+89
+
+Pointer subscript notation -------------------
+100
+95
+89
+
+Pointer offset notation -------------------
+100
+95
+89
+
+Array offset notation -------------------
+100
+95
+89
+```
