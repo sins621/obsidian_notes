@@ -35,6 +35,10 @@ The `<chrono>` feature of C++ can be used to track time, let's test that out bas
 > ![](Pictures/Pomodoro%20Main%20-%20Line%20Updating%20Issue.png)
 > 
 > Unfortunately the remnant of the last line doesn't seem to get cleared when using the `flush()` function, an alternative method may need to be investigated.
+>
+> Possible Solutions Include:
+> - `system("clear")` to clear the terminal each second.
+> - Ansi Escape Characters to move the cursor and redraw each second.
 
 A combination of the carriage return operator `"\r"` and the `fflush()` function can be used to print information on a line and continuously overwrite it while displaying the output.
 
