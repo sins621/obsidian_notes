@@ -21,13 +21,6 @@ The plan is to make a Console based Pomodoro Timer in C++.
 - [ ] Walking and Sleeping Cat Animation
 # 1. Run a Timer with Splits:
 
-## Basic Function
-The `<chrono>` feature of C++ can be used to track time, let's test that out based on this snippet from w3:
-
-```cpp nums
-
-```
-
 ## Dynamically Updating the Same Line:
 
 > Edit: There are some issues with this approach:
@@ -96,3 +89,10 @@ for (size_t i{seconds}; i > 0; --i) {
 List of Codes can be found here:
 
 https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797
+
+## Process Loop
+
+I'm still unsure about how to structure the the looping resets for the application. While `this_thread::sleep_for(chrono::seconds(1));` allows us to pause the program for one second, providing dual functionality of allowing time for the user to see what is being drawn and allowing for us to loop by using regular integers to count seconds, it unfortunately complicate matters.
+
+Freezing the program every second with this function means that we have to design our entire program around this function and so figuring out where best to place it is important. I have the idea of placing inside timer functions and then using `system("clear")` to clean the display instead of escape characters, let's see how that goes.
+
