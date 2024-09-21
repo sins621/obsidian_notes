@@ -61,3 +61,38 @@ If we don't use the flush function in this instance we won't be able to see the 
 ### `this_thread::sleep_for()` function
 
 This is used to pause the program, the time it's paused for in this instance is 1 second provided by the `chrono` library.
+
+## Dynamically Updating Multiple Lines:
+
+The problem outlined under the previous heading can be addressed by taking a different approach, using **Ansi Escape Codes** instead. 
+
+### Ansi Escape Codes
+
+> ANSI escape sequences are a standard for in-band signaling to control cursor location, color, font styling, and other options on video text terminals and terminal emulators.
+
+https://en.wikipedia.org/wiki/ANSI_escape_code
+
+We are mainly interested in manipulating the cursor position to allow us to draw over lines that we have previously written. We can achieve this with the following two escape codes:
+
+- `ESC[#A` Which moves the cursor up # lines.
+- `ESC[0J` Which erases from the cursor to the end of the line.
+
+We will substitute `ESC` in these examples with `/x1B` in our `std::cout` statements.
+
+We will no longer need to use `fflush()` as we can now use the new line code `\n` which will clean the buffer and print the line each second.
+
+Here's a code snippet example:
+
+```cpp nums {4,5}
+for (size_t i{seconds}; i > 0; --i) {
+	cout << "\x1b[91m" << i << " Seconds remaining\n";
+	this_thread::sleep_for(chrono::seconds(1)); // Freeze for 1 second
+    cout << "\n";
+	cout << "\x1B[1A"; // Move the Cursor up one line
+	cout << "\x1B[0K"; // Erase Text from the Cursor to the end of the                                  // Line
+}
+```
+
+List of Codes can be found here:
+
+https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797
