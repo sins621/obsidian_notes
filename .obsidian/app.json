@@ -8,6 +8,6 @@
   "newFileLocation": "current",
   "promptDelete": false,
   "showInlineTitle": true,
-  "showRibbon": true,
+  "showRibbon": false,
   "autoPairMarkdown": false
 }

@@ -6,7 +6,7 @@ The plan is to make a Console based Pomodoro Timer in C++.
 	- [ ] Work Split with Break Split
 	- [ ] Progress Bar
 	- [x] Dynamically Updating the Same Line
-	- [ ] Dynamically Updating Multiple Lines
+	- [x] Dynamically Updating Multiple Lines
 
 - [ ] 2. Log Splits to a Text File
 	- [ ] Create Text File
