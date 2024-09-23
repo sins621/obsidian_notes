@@ -3,7 +3,7 @@
 The plan is to make a Console based Pomodoro Timer in C++.
 ## To do:
 - [ ] 1. Run a Timer with Splits
-	- [ ] Work Split with Break Split
+	- [x] Work Split with Break Split
 	- [ ] Progress Bar
 	- [x] Dynamically Updating the Same Line
 	- [x] Dynamically Updating Multiple Lines
@@ -42,11 +42,9 @@ fflush(stdout); // Flash buffer to display numbers sequentially
 this_thread::sleep_for(chrono::seconds(1)); // Freeze for 1 second
 }
 ```
-
 ### Carriage Return Operator `"\r"`
 
 This operator returns the cursor to the beginning of the line allowing us to overwrite the previous information present in the line however I am unsure how this will effect drawing multiple lines.
-
 ### The `fflush()` Function
 
 If we don't use the flush function in this instance we won't be able to see the output that we're attempting to draw with our for loop. The reason for this is that output will only be drawn when either a new line (`\n`) is encountered, the buffer is full or the program reaches it's end.
@@ -54,11 +52,9 @@ If we don't use the flush function in this instance we won't be able to see the 
 ### `this_thread::sleep_for()` function
 
 This is used to pause the program, the time it's paused for in this instance is 1 second provided by the `chrono` library.
-
 ## Dynamically Updating Multiple Lines:
 
 The problem outlined under the previous heading can be addressed by taking a different approach, using **Ansi Escape Codes** instead. 
-
 ### Ansi Escape Codes
 
 > ANSI escape sequences are a standard for in-band signaling to control cursor location, color, font styling, and other options on video text terminals and terminal emulators.
@@ -89,10 +85,13 @@ for (size_t i{seconds}; i > 0; --i) {
 List of Codes can be found here:
 
 https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797
-
 ## Process Loop
 
 I'm still unsure about how to structure the the looping resets for the application. While `this_thread::sleep_for(chrono::seconds(1));` allows us to pause the program for one second, providing dual functionality of allowing time for the user to see what is being drawn and allowing for us to loop by using regular integers to count seconds, it unfortunately complicate matters.
 
 Freezing the program every second with this function means that we have to design our entire program around this function and so figuring out where best to place it is important. I have the idea of placing inside timer functions and then using `system("clear")` to clean the display instead of escape characters, let's see how that goes.
+
+> **Update:** It seems as though the solution was to use a combination of escape codes and clearing the screen. Escape codes can be used when the intention is to keep something that is currently written on screen present while the clear command can be used to move to different sections of the program.
+
+## Progress Bar
 
