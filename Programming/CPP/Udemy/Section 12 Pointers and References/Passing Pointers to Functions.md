@@ -42,3 +42,56 @@ In this case we have an integer named `value` with 10 assigned to it, we can cal
 
 When we return from the function we now display value which is doubled to 20. 
 # Examples in the IDE:
+
+```cpp nums
+#include <iostream>
+
+using namespace std;
+
+void double_data(int *fn_int_ptr) { *fn_int_ptr *= 2; }
+
+int main() {
+  int value{10};
+  int *int_ptr{nullptr};
+
+  cout << "Value " << value << endl;
+  double_data(&value);
+  cout << "Value " << value << endl;
+
+  cout << "-----------------------------" << endl;
+  int_ptr = &value;
+  double_data(int_ptr);
+  cout << "Value " << value << endl;
+
+  cout << endl;
+  return 0;
+}
+```
+
+In this program all the function does is doubles whatever it's pointing to.
+
+We'll call the function in two parts, first by passing in the memory location of the `value` variable:
+
+```cpp
+cout << "Value " << value << endl;
+double_data(&value);
+cout << "Value " << value << endl;
+```
+
+And second by assigning a pointer to the memory location of the `value` variable and passing that into the function:
+
+```cpp
+int_ptr = &value;
+double_data(int_ptr);
+cout << "Value " << value << endl;
+```
+
+Let's see how this looks on the stack:
+
+## The Stack
+
+### Initialization:
+
+![](Pictures/Passing%20Pointers%20to%20Functions%20Initialization.png)
+
+First we initialize two variables, `value` and `int_ptr` and we can imagine that their memory addresses are 1000 and 2000 respectively.
