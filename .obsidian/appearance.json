@@ -8,5 +8,6 @@
   "showViewHeader": true,
   "interfaceFontFamily": "DMMono Nerd Font",
   "textFontFamily": "DMMono Nerd Font",
-  "nativeMenus": false
+  "nativeMenus": false,
+  "theme": "obsidian"
 }
