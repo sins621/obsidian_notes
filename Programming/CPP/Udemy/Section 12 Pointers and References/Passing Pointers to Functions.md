@@ -95,3 +95,6 @@ Let's see how this looks on the stack:
 ![](Pictures/Passing%20Pointers%20to%20Functions%20Initialization.png)
 
 First we initialize two variables, `value` and `int_ptr` and we can imagine that their memory addresses are 1000 and 2000 respectively.
+
+## `double_data` function
+
