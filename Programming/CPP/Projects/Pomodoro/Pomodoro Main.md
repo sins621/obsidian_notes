@@ -98,3 +98,4 @@ Freezing the program every second with this function means that we have to desig
 
 ## Progress Bar
 
+Cool
