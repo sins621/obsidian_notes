@@ -97,5 +97,3 @@ Freezing the program every second with this function means that we have to desig
 > **Update:** It seems as though the solution was to use a combination of escape codes and clearing the screen. Escape codes can be used when the intention is to keep something that is currently written on screen present while the clear command can be used to move to different sections of the program.
 
 ## Progress Bar
-
-Cool
