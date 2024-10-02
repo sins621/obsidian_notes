@@ -179,3 +179,28 @@ x: 200
 y: 100
 ```
 
+## Example 3:
+
+```cpp nums
+#include <iostream>
+#include <string>
+#include <vector>
+
+using namespace std;
+
+void display(vector<string> *v) {
+  for (auto str : *v)
+    cout << str << " ";
+  cout << endl;
+}
+
+void display(int *array, int sentinel);
+
+int main() {
+
+  cout << "-------------------------------------" << endl;
+  vector<string> stooges{"Larry", "Moe", "Curly"};
+  display(&stooges);
+}
+```
+
