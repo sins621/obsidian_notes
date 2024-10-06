@@ -17,6 +17,9 @@ The plan is to make a Console based Pomodoro Timer in C++.
 
 - [ ] 4. Add Ability to Pause, Restart, Change Splits
 
+- [ ] 5. Resize Depending on Terminal Size
+	- [ ] Research Ncurses for Linux
+
 **Bonus?**
 - [ ] Walking and Sleeping Cat Animation
 # 1. Run a Timer with Splits:
