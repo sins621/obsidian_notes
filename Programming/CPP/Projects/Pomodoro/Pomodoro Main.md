@@ -1,6 +1,6 @@
 # Introduction
 
-The plan is to make a Console based Pomodoro Timer in C++.
+The plan is to make a Console based Pomodoro Timer in ~~C++~~ Python.
 ## To do:
 - [x] 1. Run a Timer with Splits
 	- [x] Work Split with Break Split
@@ -18,10 +18,15 @@ The plan is to make a Console based Pomodoro Timer in C++.
 - [ ] 4. Add Ability to Pause, Restart, Change Splits
 
 - [ ] 5. Resize Depending on Terminal Size
-	- [ ] Research Ncurses for Linux
+	- [x] Research Ncurses for Linux
+	- [ ] Resizing Using Python
 
 **Bonus?**
 - [ ] Walking and Sleeping Cat Animation
+# Moving to Python
+
+It's become very clear to me that I will need to use 3rd party libraries like ncurses to get simple functionality that I need like being able to find the width of the terminal that the program is run in. Unfortunately at this point I don't yet have the knowledge needed to use third party libraries in my project. This would likely involve linking files, potentially cmake, all of which is far out of the scope of this project.
+
 # 1. Run a Timer with Splits:
 
 ## Dynamically Updating the Same Line:
