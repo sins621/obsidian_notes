@@ -43,11 +43,11 @@ behind the scenes to call your function and test your code.
 */
 
 void swapPointers(int* ptr1, int* ptr2) {
-    //-- Write your code below this line
-
-    
-    
-    
-    //-- Write your code above this line
+  //-- Write your code below this line
+  *ptr1 = *ptr1 + *ptr2;
+  *ptr2 = *ptr1 - *ptr2;
+  *ptr1 = *ptr1 - *ptr2;
+  cout << "Function Completed\n";
+  //-- Write your code above this line
 }
 ```
