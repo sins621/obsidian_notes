@@ -1,1 +1,0 @@
-Python doesn't have constants
