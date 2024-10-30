@@ -125,4 +125,3 @@ car.speed
 ### Accessing Object Methods
 
 ![](Pictures/OOP%20-%20Accessing%20Object%20Methods.png)
-
