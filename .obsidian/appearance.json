@@ -4,10 +4,10 @@
     "opacity"
   ],
   "accentColor": "",
-  "monospaceFontFamily": "DMMono Nerd Font",
+  "monospaceFontFamily": "FiraCode Nerd Font",
   "showViewHeader": true,
-  "interfaceFontFamily": "DMMono Nerd Font",
-  "textFontFamily": "DMMono Nerd Font",
+  "interfaceFontFamily": "",
+  "textFontFamily": "",
   "nativeMenus": false,
   "theme": "obsidian"
 }
