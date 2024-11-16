@@ -1,5 +1,4 @@
 # Introduction
-
 The `open` and `read` functions can be used to interact with external files in python.
 
 Say we have a `.txt` file named `my_file` containing:
