@@ -75,3 +75,19 @@ print(data) # {'timestamp': 1732412661, 'iss_position': {'longitude': '-24.0732'
 ```
 # API Parameters
 
+Some APIs can take parameters as arguments in their request to modify what is returned.
+
+```python nums
+parameters = {
+    "lat": MY_LAT,
+    "lng": MY_LONG,
+    "formatted": 0,
+}
+
+response = requests.get(
+	"https://api.sunrise-sunset.org/json", 
+	params=parameters
+)
+```
+
+In this example we're calling an API that returns a sunrise and sunset time when we pass in our location as longitude and latitude. We also modify the output by passing in a key named `formatted` with a value of 0 to indicate that the time that is returned should not be formatted. Notice that in this instance we are passing parameters in as a dictionary.
