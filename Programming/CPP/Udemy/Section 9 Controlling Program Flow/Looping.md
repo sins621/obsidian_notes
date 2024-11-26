@@ -1288,3 +1288,4 @@ int main() {
     } while (opt != 'Q' && opt != 'q');
 }
 ```
+3
