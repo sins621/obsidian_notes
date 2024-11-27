@@ -1,0 +1,29 @@
+# Technologies
+
+- Django
+- Flask
+- MySQL
+- Postgres
+- React
+- NextJS
+- RESTful APIs
+- NoSQL
+- MongoDB
+- Angular
+- AWS
+- Azure
+- GCP
+- Confluence
+- Jira
+- HTML
+- CSS
+- JQuery
+- Javascript
+- Typescript
+- Vue.js
+- NodeJS
+- FASTAPI
+- SQLAlchemy
+- Celery
+- Google Cloud Platform
+- AWS Lambda
