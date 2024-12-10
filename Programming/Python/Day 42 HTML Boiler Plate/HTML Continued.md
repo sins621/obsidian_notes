@@ -31,3 +31,14 @@ We can create hyperlinks by using anchor tags `<a></a>` and providing attributes
 ![](Pictures/HTML%20Continued%20-%20Hyperlinks.png)
 
 # Image Element
+
+The `img` element can be used to display an image in your webpage:
+
+```html
+    <img
+      src="https://raw.githubusercontent.com/appbrewery/webdev/main/birthday-cake3.4.jpeg"
+      alt="Birthday Cake"
+    />
+```
+
+Use the `src` attribute to specify the source of the image, in this example it is from a web page. Use the `alt` attribute to specify a name or description for the image so that accessibility software can inform the user of the contents of the image.
