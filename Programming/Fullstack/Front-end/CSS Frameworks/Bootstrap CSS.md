@@ -186,3 +186,47 @@ And let's resize the page:
 ![](Pictures/Bootstrap%20CSS%20-%20Example%20Bootstrap%20Resize.png)
 
 Notice how columns are dynamically pushed over to new rows when the size is reduced. This is a result of the *Auto-Fit* behavior of Bootstrap. 
+## Container Sizing
+
+The maximum width of the *container* is dictated by the container class used.
+
+![](Pictures/Bootstrap%20CSS%20-%20Container%20Sizes.png)
+
+![](Pictures/Bootstrap%20CSS%20-%20Container%20Size%20Examples.png)
+
+In the screenshot above at the size of the browser page you can see where different containers my have margins at the edges of the page or where certain containers may fill the entire screen, remember this dynamically changes based on the size of the browser window.
+## Sized Columns
+
+![](Pictures/Bootstrap%20CSS%20-%20Sized%20Columns.png)
+
+Just like when we were working with the grid layout in Tkinter, we can allow columns to span over multiple columns by providing a number a long with the `col` class name to specify how many columns it should span over.
+# Bootstrap Breakpoints
+
+We can use *Breakpoints* to specify a size to where our columns will collapse and be spaced to each column taking up the entire screen.
+
+In other words, when the width of our browser is reduced to a specified threshold each column will span the entire screen and subsequent columns will be pushed on to new rows.
+
+![](Pictures/Bootstrap%20CSS%20-%20Breakpoint%20Tiers.png)
+
+Let's look at an example using the *medium* tier (`col-md`).
+
+- Size Greater Than The Breakpoint:
+
+![](Pictures/Bootstrap%20CSS%20-%20Above%20Medium%20Breakpoint.png)
+
+- Size Less Than The Breakpoint:
+
+![](Pictures/Bootstrap%20CSS%20-%20Size%20Less%20Than%20Breakpoint.png)
+
+## Multiple Breakpoints
+
+![](Pictures/Bootstrap%20CSS%20-%20Multiple%20Breakponts.png)
+
+We can also specify multiple breakpoints, this way the amount of columns that a single column will span will depend on the size of the browser window while still collapsing to a single column the size of the screen at a the minimum size.
+## Mixing and Matching Layouts
+
+![](Pictures/Bootstrap%20CSS%20-%20Mixing%20and%20Matching%20Layouts.png)
+
+We can also mix and match multiple column layouts in a single row, Bootstrap will dynamically adjust the position of these columns based on the size of our web-page.
+
+**Note:** The lonely `col` column will automatically take up the remaining space in the row.
