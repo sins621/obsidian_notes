@@ -76,9 +76,7 @@ The final selector we'll look at in this document is the *universal selector*.
 ```
 
 Simply put, this selector applies styling to all elements inside of the HTML document.
-# Intermediate CSS
 
-In this document we'll explore some more intermediate CSS topics.
 ### Colors
 
 CSS has access to many colors as of the current standard and supports a white array of *named colors* as well as colors represented by a *hex-code*
@@ -237,7 +235,7 @@ Now let's add a margin of 10 pixels:
 ![](Pictures/Intermediate%20CSS%20-%20Margin.png)
 
 Now we can see that there is a gap between these two elements however do note that both of these elements are being styled by the same rules meaning that they **both have a margin of 10 pixels**. This means that the gap between them is effectively 20 pixels.
-## Divisions
+### Divisions
 `<div></div>`
 
 We can place multiple elements inside a single 'box-model' by using the division tag, this way we can apply the same adjustments to padding, margins and apply a border to all elements as a whole that are inside of this division.
@@ -246,3 +244,197 @@ We can place multiple elements inside a single 'box-model' by using the division
 
 In this image I've placed both of our paragraphs inside of a division and given it a solid red border with a width of 10 pixels. Notice that the margin is still present between these paragraphs and they retain their borders.
 
+## The Cascade
+
+The reason CSS is called **Cascading Style Sheets** is because elements are styled in an order of importance from beginning to end and the order can be mentally visualized as a water cascade.
+
+![](Pictures/CSS%20-%20Cascade.png)
+
+### Order of Importance
+
+In order to determine which styling takes precedent if the same attributes are being modified among them CSS employs the following order of importance:
+
+1. Position
+2. Specificity
+3. Type
+4. Importance
+#### Position
+
+The first thing that is looked at is the position of one rule to the next ordered from top to bottom.
+
+![](Pictures/CSS%20-%20Position%20Example.png)
+
+Because the rule to color the list item to blue is below to the rule to color it to red the text will be colored *blue*.
+
+The same is true for the **overall order of importance**. In other words *Type* will take precedence over *Specificity* because it is lower in the order.
+#### Specificity
+
+Specificity refers to how specific a selector is in terms of the elements that you're applying the CSS Rules to.
+
+The order of specificity is as follows:
+
+1. Element Selector
+2. Class Selector
+3. Attribute Selector
+4. ID Selector
+
+```html
+<li id="first-id" class="first-class" draggable>
+```
+
+```css
+li {
+  color: blue;
+}
+
+.first-class {
+  color: red;
+}
+
+li[draggable] {
+  color: purple;
+}
+
+#first-id {
+  color: orange;
+}
+```
+
+In this example the list item will be *orange* because ID is last in our order of specificity.
+#### Type
+
+Type refers to the type of styling that is being applied. As we have learnt at the beginning of this document we can apply styling *Inline*, *Internally* and *Externally*. The order of precedence for the type of styling however is as follows:
+
+1. Externally
+2. Internally
+3. Inline
+
+```html
+<link rel="stylesheet" href="./style.css">
+<style> </style>
+<h1 style=" ">Hello</h1>
+```
+
+In this example the styling that will be applied is the *Inline* styling because it is last in the order of precedence for Type.
+#### Importance
+
+The `!important;` keyword ensures that whatever rule it is placed by will always be the most important rule and will be processed.
+
+```css
+color: red;
+color: green !important;
+```
+
+Therefore, in this example the element will be styled green.
+
+## Combining CSS Selectors
+
+HTML Files can grow quite large with many different hierarchies and nested elements. We can combine CSS Selectors in order to target specific elements that may otherwise have require adding unique IDs.
+
+```html nums {1,3}
+<p> Yellow Text</p>
+<div class="box inner-box">
+	<p>White Text</p>
+</div>
+```
+
+```css nums
+p {
+  color: yellow;
+}
+.inner-box p {
+  color: white;
+}
+```
+
+In this example our paragraph tag containing "White Text" will be styled white while other paragraph tags in our document will be styled yellow. By combining the class name `inner-box` and the element on line 4 of our CSS snippet we can target specifically the paragraph tag nested inside an element with that specific class.
+
+There are multiple ways of combining CSS Selectors that all select html elements in different ways. 
+
+They are as follows:
+
+- **Group**
+- **Child**
+- **Descendant**
+- **Chaining**
+#### Group
+
+The group selector, used by separating items by commas, allows you to apply your CSS Rule to multiple elements at once.
+
+```CSS
+h1, h2{
+  color: green;
+}
+```
+#### Child
+
+By using a greater than sign `>` we can select an element that is a child of another element. This means that the item needs to be **directly** nested from the parent.
+
+```html
+<parent>
+	<child>Affected Item</child>
+</parent>
+```
+
+```css
+parent > child {
+  color: firebrick;
+}
+```
+
+**Note**: If the element is nested more than one element deep from the parent than it is not selectable in this manner.
+#### Descendant
+
+Descendants of elements can be selecting by including the element after the parent separated by a space.
+
+```css
+ancestor descendant {
+  color: blue;
+}
+```
+
+This means that no matter how deep the element is nested, as long as it has the specified ancestor it will be styled by this rule.
+
+```html
+<ancestor>
+	<some_element>
+		<some_other_element>
+			<descendant>Blue Text</descendant>
+		</some_other_element>
+	</some_element>
+</ancestor>
+```
+#### Chaining
+
+When we combine selectors by chaining we are asking for the style to be applied when *ALL* selectors are true. In order to use this kind of selection we need to add selectors together with no spaces.
+
+```css
+selector1selector2{
+  color: seagreen;
+}
+```
+
+The intention here is to chain together multiple identifiers for example say we had an HTML element as follows:
+
+```html
+<h1 id="title" class="big heading">Hello World</h1>
+```
+
+We can be very specific when selecting this element by chaining all of it's identifiers together.
+
+```css
+h1#title.big.heading {
+  color: yellow;
+}
+```
+
+**Note**: Because classes and IDs have prefixes while elements don't it's important to begin your chain with the name of the element you are targeting before adding other identifiers.
+#### Combining Combiners
+
+It is possible to combine combiners together for added granularity:
+
+```css
+ancestor descendant#id.class{
+  font-size: 2rem;
+}
+```
