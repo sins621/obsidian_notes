@@ -43,5 +43,3 @@ We can also initialize pointers to actually point to a variable and we'll do tha
 - Initializing to Zero or `nullptr` (C++ 11) represents address zero.
 	- implies that the pointer is 'pointing nowhere'
 - If You Don't Initialize a Pointer to Point to a Variable or Function Then You Should Initialize it to `nullptr` to 'make it null'
-
-\
