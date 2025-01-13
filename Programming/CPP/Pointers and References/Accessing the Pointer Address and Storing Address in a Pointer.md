@@ -12,7 +12,7 @@ In this lesson we'll learn how to access the address or location in memory of an
 
 In C++ we can use the address operator which is the ampersand symbol `&` to the left side of an operand. The address operator is a unary operator and when used in an expression it evaluates to the address of it's operand.
 
-Of course the operand must have an [L Value](../../../Generic%20Terms/L%20Value.md), so it can't be a constant or an expression that evaluates to temporary values. 
+Of course the operand must have an [L Value](../../Generic%20Concepts/L%20Value.md), so it can't be a constant or an expression that evaluates to temporary values. 
 
 ```cpp
 int num{10};
