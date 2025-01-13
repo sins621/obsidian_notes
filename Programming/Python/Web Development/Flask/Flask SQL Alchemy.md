@@ -73,8 +73,18 @@ We use the `db.session.execute()` command to execute an SQL query, in this insta
 We use `scalars()` to ensure that only information related to the Cafe ORM model is returned excluding any other meta data or unrelated information in the table.
 
 We can also return a list rather than an SQL Alchemy object by using `scalars().all()`. This is useful when you may want to pass the the information to HTML templates.
+## Searching for Items in the Database
 
-# Error Handling
+```python
+# cafe_location variable = Location we're searching
+cafe_location_query = db.session.execute(
+	db.select(Cafe).where(Cafe.location == cafe_location)
+).scalar()
+```
+
+In this example we're querying the database for an entry where the location of the cafe is equal to the variable we're passing in. The important method here is `where()`. Using this method we pass in our query as where the value we're querying is equivalent to the value at a specified attribute of the model.
+
+**Note**: `scalar()` is used here in place of `scalars()` as we only intend to return a single row from the database. # Error Handling
 
 We can use `try` statements to throw exceptions when we have errors relating to accessing the database, let's continue with our Cafe database as an example:
 
