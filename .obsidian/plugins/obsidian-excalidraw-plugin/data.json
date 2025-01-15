@@ -25,7 +25,6 @@
   "annotatePrefix": "annotated_",
   "annotatePreserveSize": false,
   "previewImageType": "PNG",
-  "renderingConcurrency": 3,
   "allowImageCache": true,
   "allowImageCacheInScene": true,
   "displayExportedImageIfAvailable": false,
@@ -785,5 +784,6 @@
       "key": "G"
     }
   ],
-  "showSplashscreen": true
+  "showSplashscreen": true,
+  "renderingConcurrency": 3
 }

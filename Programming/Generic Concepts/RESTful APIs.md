@@ -69,3 +69,84 @@ def random():
 ```
 
 In this example we're creating a route that is mapped to the `/random` route expecting a 'Get' request. We use the jsonify library to provide our responses as json and use `try` and `if` to provide appropriate responses for cases where the expected result is not returned. Notice that status codes are provided for those cases.
+## POST New Cafe
+
+```python
+@app.route("/add_cafe", methods=["POST"])
+def add_cafe():
+    new_cafe_info = request.args
+    new_cafe = Cafe(
+        name=new_cafe_info.get("name", ""),
+        map_url=new_cafe_info.get("map_url", ""),
+        img_url=new_cafe_info.get("img_url", ""),
+        location=new_cafe_info.get("location", ""),
+        seats=new_cafe_info.get("seats", ""),
+        has_toilet=new_cafe_info.get("has_toilet", "False").lower() in ["true", "1"],
+        has_wifi=new_cafe_info.get("has_wifi", "False").lower() in ["true", "1"],
+        has_sockets=new_cafe_info.get("has_sockets", "False").lower() in ["true", "1"],
+        can_take_calls=new_cafe_info.get("can_take_calls", "False").lower()
+        in ["true", "1"],
+        coffee_price=new_cafe_info.get("coffee_price", ""),
+    )
+
+    try:
+        result = db.session.execute(db.select(Cafe).order_by(Cafe.name))
+        all_cafes = result.scalars().all()
+        if db_has_name(new_cafe, all_cafes):
+            return jsonify({"error": f"Database already has {new_cafe.name}"}), 400
+        else:
+            db.session.add(new_cafe)
+            db.session.commit()
+
+    except SQLAlchemyError as e:
+        return jsonify({"error": f"Database error {e} occured"}), 500
+
+    return jsonify({"success": f"Added {new_cafe.name} to the Database"}), 200
+```
+
+## PUT/PATCH Existing Cafe
+
+```python
+@app.route("/update-price/<int:cafe_id>", methods=["PUT", "PATCH"])
+def update_price(cafe_id):
+    cafe_to_update = Cafe.query.get_or_404(
+        cafe_id, description=f"Cafe at ID:{cafe_id} not Found"
+    )
+    new_price = request.args.get("coffee_price", None)
+    if new_price is not None:
+
+        if len(new_price) > 250:
+            return (
+                jsonify(
+                    {"error": "Coffee price exceeds maximum length of 250 characters"}
+                ),
+                400,
+            )
+
+        try:
+            cafe_to_update.coffee_price = new_price
+            db.session.commit()
+            return jsonify({"message": "Coffee price updated successfully"}), 200
+        except DataError:
+            return jsonify({"error": "Invalid data for coffee price"}), 400
+    else:
+        return jsonify({"error": "No coffee price provided"}), 400
+
+```
+
+## DELETE Cafe
+
+```python
+@app.route("/delete-cafe/<int:cafe_id>", methods=["DELETE"])
+def delete_cafe(cafe_id):
+    cafe_to_delete = Cafe.query.get_or_404(
+        cafe_id, description=f"Cafe at ID:{cafe_id} not Found"
+    )
+
+    try:
+        db.session.delete(cafe_to_delete)
+        db.session.commit()
+    except SQLAlchemyError as e:
+        return jsonify({"error": f"Database Error {e} Occured"}), 500
+    return jsonify({"success": f"Cafe ID:{cafe_id} Deleted"}), 200
+```
