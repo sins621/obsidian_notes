@@ -1,6 +1,5 @@
-# CSS
 Cascading Style Sheets
-## Applying CSS to an HTML Document
+# Applying CSS to an HTML Document
 
 CSS can be applied to websites via three methods:
 
@@ -10,26 +9,26 @@ CSS can be applied to websites via three methods:
 	`<style>css</style>`
 - **External**
 	`<link href="style.css"/>`
-### Inline CSS
+## Inline CSS
 
 ![](Pictures/CSS%20-%20Inline.png)
 
 In this example we're changing the background color of our webpage using CSS. We add the attribute to the *html* tag with a *CSS Property*, 'background' in this case, and the value of the color blue. This method of adding CSS to an HTML document is generally not recommended but is useful if you only intend to target a single element.
-### Internal CSS
+## Internal CSS
 
 ![](Pictures/CSS%20-%20Internal%20CSS.png)
 
 In this example we're using CSS tags to insert CSS code into our HTML document.
-### External CSS
+## External CSS
 
 ![](Pictures/CSS%20-%20External%20CSS.png)
 
 Using the `<link/>` element we can link an external CSS file to our HTML file to add styling. This is the most commonly implemented method of adding CSS styling to webpages.
 
-## CSS Selectors
+# CSS Selectors
 
 Inside of our CSS file we can indicate which part of our web page we intend to add styling to by using a *selector*.
-### Element Selector
+## Element Selector
 
 Here we see the most basic form of a CSS Selector, the *element selector*:
 
@@ -38,21 +37,21 @@ Here we see the most basic form of a CSS Selector, the *element selector*:
 In this example we're targeting the `h2` element, or header 2 element, and applying the red color to it.
 
 **Note:** When selecting an element this way, all elements that share the same name will have styles applied to them, this is why all headings on our webpage have their colors changed to red.
-### Class Selector
+## Class Selector
 
 In this example we're we're assigning a class name to our "Red" text by using the `class` attribute. We then reference this class name in our CSS file by prefixing it with a full stop:
 
 ![](Pictures/CSS%20-%20Class%20Selector.png)
 
 **Note:** Other elements which share the same class name will also have the same styling applied to it.
-### ID Selector
+## ID Selector
 
 In this example we're making use of the *ID Selector*. We assign an ID to an HTML element by making use of the `id` attribute and referencing this attribute in our CSS file by prefixing the name with the pound symbol.
 
 ![](Pictures/CSS%20-%20ID%20Selector.png)
 
 While functionally it may look the same the difference between ID and Class is that ID is to be unique ie, only applied to one single element in an HTML file where as a Class is to be used to apply styling to many different elements in a single HTML file.
-### Attribute Selector
+## Attribute Selector
 
 In this example we are styling by attribute using the *attribute selector*.
 
@@ -65,7 +64,7 @@ We can also use the attribute selector to select elements that have a specific *
 ![](Pictures/CSS%20-%20Attribute%20Value%20Selector.png)
 
 Here we can see that only elements which have the `draggable` attribute set to `false` have styling applied to them.
-### Universal Selector
+# Universal Selector
 
 The final selector we'll look at in this document is the *universal selector*. 
 
@@ -77,7 +76,7 @@ The final selector we'll look at in this document is the *universal selector*.
 
 Simply put, this selector applies styling to all elements inside of the HTML document.
 
-### Colors
+## Colors
 
 CSS has access to many colors as of the current standard and supports a white array of *named colors* as well as colors represented by a *hex-code*
 
@@ -94,10 +93,10 @@ CSS has access to many colors as of the current standard and supports a white ar
 	background: #c58940; /* hex color */
   }
 ```
-### Font Properties
+## Font Properties
 
 We can use CSS to adjust various font properties such as the size, weight, family, etc.
-#### Size:
+### Size:
 `font-size`
 
 Font sizes can be described by the pixel size, point size, size relative to the parent element or size relative to the root element.
@@ -109,14 +108,14 @@ The **Pixel** size relates to an amount of pixels while **Point** is a unit of m
 *em* and *rem* relative units of measurement where the unit prefixed to the unit denotes the multiple that the size of the font will be to the element it is related to. This means that for example if you were to use a font of `2em` where the element as a size of 20 pixels, the font size will be 40 pixels.
 
 Where the two differ is that `em` is relative to any parent element such as a `<footer>` element for example, this means that if the size of the `<footer>` element changes so will our font size. `rem` However is relative to the root of the HTML page, in other words the `<html>` element.
-#### Weight:
+### Weight:
 `font-weight`
 
 Font weight, which refers to how **bold** the font is, can be adjusted via keywords, relation to a parent element or a number value.
 
 ![](Pictures/Intermediate%20CSS%20-%20Font%20Weight.png)
 
-#### Family:
+### Family:
 `font-family`
 
 In addition to font size and weight, we can also specify the font family to be used, also known as the font face.
@@ -133,7 +132,7 @@ Some generic fonts include:
 - Cursive
 - Monospace
 - Fantasy
-##### Font From The Web
+#### Font From The Web
 
 It's also possible to include fonts from the web so that they will be sourced from the web even if the device reading the content does not have that font installed locally.
 
@@ -161,11 +160,11 @@ We are also provided with the CSS code needed to access and work with this font 
   font-style: normal;
 }
 ```
-#### Text Alignment
+### Text Alignment
 `text-align`
 
 We can also specify where text should be aligned on screen such is at the `left` point, `center` or the `right` point.
-## CSS Box Model
+# CSS Box Model
 
 CSS Handles HTML elements by surrounding them with a 'box' and providing us with the tools needed to modify elements of this box.
 
@@ -176,7 +175,7 @@ Many developer tools in web browser's will use this diagram to display the box-m
 - **Padding**
 - **Border**
 - **Margin**
-### Padding
+## Padding
 `padding`
 
 The padding effects the spacing between our element and it's border. Say we have an element with a paragraph of text inside of it where the border is a white solid line and the background color is blue:
@@ -188,7 +187,7 @@ Now let's add padding to this element, say 10 pixels:
 ![](Pictures/Intermediate%20CSS%20-%20Padding.png)
 
 The border is pushed away from the paragraph but also notice that the entire object has now become larger.
-### Border:
+## Border
 `border`
 
 We can add a border around our objects with varying sizes, remember this will be placed after the padding.
@@ -223,7 +222,7 @@ border-width: 20px 10px 5px 0px
 ![](Pictures/Intermediate%20CSS%20-%20Border%20-%20Width.png)
 
 If we provide only two values as arguments to the `border-width` then the first argument will adjust the size of the top/bottom borders and the second argument the right/left borders.
-### Margin
+## Margin
 `margin`
 
 Margin is responsible for the spacing **between** elements. Say we duplicate our paragraph element from earlier:
@@ -235,7 +234,7 @@ Now let's add a margin of 10 pixels:
 ![](Pictures/Intermediate%20CSS%20-%20Margin.png)
 
 Now we can see that there is a gap between these two elements however do note that both of these elements are being styled by the same rules meaning that they **both have a margin of 10 pixels**. This means that the gap between them is effectively 20 pixels.
-### Divisions
+## Divisions
 `<div></div>`
 
 We can place multiple elements inside a single 'box-model' by using the division tag, this way we can apply the same adjustments to padding, margins and apply a border to all elements as a whole that are inside of this division.
@@ -244,13 +243,13 @@ We can place multiple elements inside a single 'box-model' by using the division
 
 In this image I've placed both of our paragraphs inside of a division and given it a solid red border with a width of 10 pixels. Notice that the margin is still present between these paragraphs and they retain their borders.
 
-## The Cascade
+# The Cascade
 
 The reason CSS is called **Cascading Style Sheets** is because elements are styled in an order of importance from beginning to end and the order can be mentally visualized as a water cascade.
 
 ![](Pictures/CSS%20-%20Cascade.png)
 
-### Order of Importance
+## Order of Importance
 
 In order to determine which styling takes precedent if the same attributes are being modified among them CSS employs the following order of importance:
 
@@ -258,7 +257,7 @@ In order to determine which styling takes precedent if the same attributes are b
 2. Specificity
 3. Type
 4. Importance
-#### Position
+### Position
 
 The first thing that is looked at is the position of one rule to the next ordered from top to bottom.
 
@@ -267,7 +266,7 @@ The first thing that is looked at is the position of one rule to the next ordere
 Because the rule to color the list item to blue is below to the rule to color it to red the text will be colored *blue*.
 
 The same is true for the **overall order of importance**. In other words *Type* will take precedence over *Specificity* because it is lower in the order.
-#### Specificity
+### Specificity
 
 Specificity refers to how specific a selector is in terms of the elements that you're applying the CSS Rules to.
 
@@ -301,7 +300,7 @@ li[draggable] {
 ```
 
 In this example the list item will be *orange* because ID is last in our order of specificity.
-#### Type
+### Type
 
 Type refers to the type of styling that is being applied. As we have learnt at the beginning of this document we can apply styling *Inline*, *Internally* and *Externally*. The order of precedence for the type of styling however is as follows:
 
@@ -316,7 +315,7 @@ Type refers to the type of styling that is being applied. As we have learnt at t
 ```
 
 In this example the styling that will be applied is the *Inline* styling because it is last in the order of precedence for Type.
-#### Importance
+### Importance
 
 The `!important;` keyword ensures that whatever rule it is placed by will always be the most important rule and will be processed.
 
@@ -347,7 +346,7 @@ p {
 }
 ```
 
-In this example our paragraph tag containing "White Text" will be styled white while other paragraph tags in our document will be styled yellow. By combining the class name `inner-box` and the element on line 4 of our CSS snippet we can target specifically the paragraph tag nested inside an element with that specific class.
+In this example our paragraph tag containing "White Text" will be styled white while other paragraph tags in our document will be styled yellow. By combining the class name `inner-box` and the element on line 4 of our CSS snippet we can target specifically the paragraph tag nested inside an element with thjat specific class.
 
 There are multiple ways of combining CSS Selectors that all select html elements in different ways. 
 
@@ -357,8 +356,8 @@ They are as follows:
 - **Child**
 - **Descendant**
 - **Chaining**
-#### Group
-
+### Group
+`
 The group selector, used by separating items by commas, allows you to apply your CSS Rule to multiple elements at once.
 
 ```CSS
@@ -366,24 +365,8 @@ h1, h2{
   color: green;
 }
 ```
-#### Child
 
-By using a greater than sign `>` we can select an element that is a child of another element. This means that the item needs to be **directly** nested from the parent.
-
-```html
-<parent>
-	<child>Affected Item</child>
-</parent>
-```
-
-```css
-parent > child {
-  color: firebrick;
-}
-```
-
-**Note**: If the element is nested more than one element deep from the parent than it is not selectable in this manner.
-#### Descendant
+### Descendant
 
 Descendants of elements can be selecting by including the element after the parent separated by a space.
 
@@ -404,7 +387,25 @@ This means that no matter how deep the element is nested, as long as it has the 
 	</some_element>
 </ancestor>
 ```
-#### Chaining
+
+### Child
+
+By using a greater than sign `>` we can select an element that is a child of another element. This means that the item needs to be **directly** nested from the parent.
+
+```html
+<parent>
+	<child>Affected Item</child>
+</parent>
+```
+
+```css
+parent > child {
+  color: firebrick;
+}
+```
+
+**Note**: If the element is nested more than one element deep from the parent than it is not selectable in this manner.
+## Chaining
 
 When we combine selectors by chaining we are asking for the style to be applied when *ALL* selectors are true. In order to use this kind of selection we need to add selectors together with no spaces.
 
@@ -429,7 +430,7 @@ h1#title.big.heading {
 ```
 
 **Note**: Because classes and IDs have prefixes while elements don't it's important to begin your chain with the name of the element you are targeting before adding other identifiers.
-#### Combining Combiners
+## Combining Combiners
 
 It is possible to combine combiners together for added granularity:
 
@@ -438,3 +439,51 @@ ancestor descendant#id.class{
   font-size: 2rem;
 }
 ```
+
+# CSS Positioning
+
+The `position` attribute dictates the positioning behavior of the HTML element as well as how it is effected by other positioning attributes such as `left` and `top`.
+
+There are 4 positioning modes that can be chosen:
+
+- Static
+- Relative
+- Absolute
+- Fixed
+## Static Positioning
+
+This is the default positioning mode. The element will be placed in the natural HTML flow after the element that has been placed before it.
+
+**Note**: `left` and `top` don't effect the positioning of the HTML element when this mode is selected.
+
+![](Pictures/CSS%20-%20Static%20Positioning.png)
+
+## Relative Positioning
+
+This option positions the element relative to it's original or static position.
+
+![](Pictures/CSS%20-%20Relative%20Position.png)
+
+## Absolute Positioning
+
+The item is positioned relative to the nearest *positioned* ancestor *or* top left corner of the webpage.
+
+![](Pictures/CSS%20-%20Absolute%20Positioned.png)
+
+In this example the Ancestor div has it's position set to an option other than static and so our div is positioned relative to it because it is it's nearest ancestor. However, if there is no ancestor with it's position manually set the following will occur:
+
+![](Pictures/CSS%20-%20Absolute%20No%20Ancestor.png)
+
+The div is moved to the top left of the web page.
+## Fixed Position
+
+With this option the element will be placed in a fixed position relative to the browser window and will *ignore* scrolling and always stay where it is placed.
+
+![](Pictures/CSS%20-%20Fixed%20Positioning.png)
+
+## Z-Index
+
+![](Pictures/CSS%20-%20Z-Index.png)
+
+Elements have a Z-Index or a position on the Z Axis. This basically determines which element is shown on top of another. If the Z-Index of one element is higher than another then it will be placed on top of that element. This can by modified by adjusting the `z-index` property.
+

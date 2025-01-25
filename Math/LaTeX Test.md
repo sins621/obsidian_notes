@@ -1,1 +1,9 @@
-$$ T^{i_1 i_2 \dots i_p}_{j_1 j_2 \dots j_q} = T(x^{i_1},\dots,x^{i_p},e_{j_1},\dots,e_{j_q}) $$
+
+$$
+\begin{align*} 
+\frac{2}{4} + n &= 5  \\
+0.5 + n &= 5 \\
+n &= 5 - 0.5 \\
+n &= 4.5 
+\end{align*}
+$$
