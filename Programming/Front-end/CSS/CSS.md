@@ -190,7 +190,7 @@ The border is pushed away from the paragraph but also notice that the entire obj
 ## Border
 `border`
 
-We can add a border around our objects with varying sizes, remember this will be placed after the padding.
+We can add a border around our objects with varying sizes, remember this will be placed after the padding.g
 
 ![](Pictures/Intermediate%20CSS%20-%20Border.png)
 
@@ -486,4 +486,63 @@ With this option the element will be placed in a fixed position relative to the 
 ![](Pictures/CSS%20-%20Z-Index.png)
 
 Elements have a Z-Index or a position on the Z Axis. This basically determines which element is shown on top of another. If the Z-Index of one element is higher than another then it will be placed on top of that element. This can by modified by adjusting the `z-index` property.
+
+# CSS Display
+
+What'st the difference between a `<div>` and a `<span>`? Functionally, `<div>` has the **Display** setting of *block* and `<span>` has the setting *inline*. This effects how the browser displays HTML elements following one another.
+
+Say we have two headings:
+
+![](Pictures/CSS%20-%20Headings.png)
+
+**Note**: In order to showcase the differences between display settings the height has been set to `200px` for both headings.
+
+By default the property of an `h1` is *block*.  When the block setting is used each HTML element will be placed on to a new line. Let's change the display setting to *inline*.
+
+![](Pictures/CSS%20-%20Headers%20Inline.png)
+
+Now we can see that the HTML elements are placed on the same line if there is space, if there is no room available to fit all inline elements than elements that would be cropped off will pass on to the next line.
+
+You may have noticed that the *height* property has changed. This is because the *inline* display setting ignores the not only the *height* property but also the *width* property. We can however maintain control of the width and height of the element while keeping our elements inline by setting the display property to *inline-block*.
+
+![](Pictures/CSS%20-%20Headings%20Inline%20Block.png)
+
+Now we can see that we have inline behavior while maintaining control over the *height* and *width* properties.
+
+```css
+h1 {
+  color: white;
+  background: blue;
+  display: inline-block;
+  height: 200px;
+  width: 200px;
+} 
+```
+# CSS Float
+
+The layout of the webpage borrows many ideas from print media. Information is presented hierarchically, using a variety of heading sizes, dedicated paragraphs for specific contexts, and emphasized elements such as bold or italicized text. The design incorporates a grid-based structure that organizes content into columns and sections, ensuring both visual consistency and readability.
+
+In the example below we can see how text *wraps* around the image of the car. We can use the **float** property to *float* an item to the right or left so that text is able to wrap around it.
+
+![](Pictures/CSS%20-%20Newspaper.png)
+
+Let's compare the following HTML with and without `float: left;` applied:
+
+```html
+<h2>CatCSS</h2>
+
+<img src="cat.jpeg" alt="cat in a box" />
+<p class="first-paragraph">Nap all day cat dog hate mouse eat string barf pillow no baths hate everything but kitty poochy. Sleep on keyboard toy mouse squeak roll over. Mesmerizing birds. Poop on grasses licks paws destroy couch intently sniff hand. The dog smells bad gnaw.</p>
+```
+
+![](Pictures/CSS%20-%20Float%20Left.png)
+
+**Note**: When applying the float property to larger sections it may have unintended results with other elements, for example if we also happen to have a `<footer>` it may improperly wrap besides the image if there is room.
+
+![](Pictures/CSS%20-%20Footer%20Wrapping.png)
+
+In order to avoid this we will need to change the *float* property on the `<footer>` to **'clear'**.
+
+![](Pictures/CSS%20-%20Float%20Clear.png)
+
 
