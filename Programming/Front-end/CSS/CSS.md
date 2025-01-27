@@ -190,7 +190,7 @@ The border is pushed away from the paragraph but also notice that the entire obj
 ## Border
 `border`
 
-We can add a border around our objects with varying sizes, remember this will be placed after the padding.
+We can add a border around our objects with varying sizes, remember this will be placed after the padding.g
 
 ![](Pictures/Intermediate%20CSS%20-%20Border.png)
 
