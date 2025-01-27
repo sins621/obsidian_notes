@@ -440,7 +440,12 @@ ancestor descendant#id.class{
 }
 ```
 
-# CSS Positioning
+# Managing Layout
+
+The web has adopted a "responsive-design" approach to creating web-pages. If you're like me you may have mistook the usage of "responsive" to imply that the web-page responds quickly to user interaction but the term is actually used to create an interface or layout that responds to the *environment* it is being placed in.
+
+In other words, the expectation these days is that web-pages are built to scale efficiently between different platforms, screen sizes and input methods. We will use various tools such as media queries, grid layout and flex-boxes to achieve this responsive goal.
+## CSS Positioning
 
 The `position` attribute dictates the positioning behavior of the HTML element as well as how it is effected by other positioning attributes such as `left` and `top`.
 
@@ -450,7 +455,7 @@ There are 4 positioning modes that can be chosen:
 - Relative
 - Absolute
 - Fixed
-## Static Positioning
+### Static Positioning
 
 This is the default positioning mode. The element will be placed in the natural HTML flow after the element that has been placed before it.
 
@@ -458,13 +463,13 @@ This is the default positioning mode. The element will be placed in the natural 
 
 ![](Pictures/CSS%20-%20Static%20Positioning.png)
 
-## Relative Positioning
+### Relative Positioning
 
 This option positions the element relative to it's original or static position.
 
 ![](Pictures/CSS%20-%20Relative%20Position.png)
 
-## Absolute Positioning
+### Absolute Positioning
 
 The item is positioned relative to the nearest *positioned* ancestor *or* top left corner of the webpage.
 
@@ -475,15 +480,43 @@ In this example the Ancestor div has it's position set to an option other than s
 ![](Pictures/CSS%20-%20Absolute%20No%20Ancestor.png)
 
 The div is moved to the top left of the web page.
-## Fixed Position
+### Fixed Position
 
 With this option the element will be placed in a fixed position relative to the browser window and will *ignore* scrolling and always stay where it is placed.
 
 ![](Pictures/CSS%20-%20Fixed%20Positioning.png)
 
-## Z-Index
+### Z-Index
 
 ![](Pictures/CSS%20-%20Z-Index.png)
 
 Elements have a Z-Index or a position on the Z Axis. This basically determines which element is shown on top of another. If the Z-Index of one element is higher than another then it will be placed on top of that element. This can by modified by adjusting the `z-index` property.
+## Media Query
 
+Media Query allows you to set rules that need to be met in order for CSS inside the Media Query block to be executed.
+
+For instance we can set a minimum pixel size for a rule to be executed:
+
+```css
+@media(min-width: {your-min-width}px){
+	{foo}:bar;
+}
+```
+
+This way when the display is equal to or above this minimum `foo` will be applied.
+
+![](Pictures/CSS%20-%20Media%20Query%20Rule.png)
+
+We can also set a *maximum* width as well as applying both rules at the same time.
+
+```css
+@media(max-width: {your-max-width}px){
+	{foo}:bar;
+}
+
+@media(max-width: {your-max-width}px) and (max-width: {your-max-width}px){
+	{foo}:bar;
+}
+```
+
+There are also context specific Media Queries that you might see such as `@media screen(orientation=landscape){}` to enable to you have separate rules for if the web-page was to be displayed on a screen or `@media print(){}` to be printed however that is quite rare these days.

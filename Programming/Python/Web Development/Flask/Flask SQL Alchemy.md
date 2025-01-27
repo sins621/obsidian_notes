@@ -1,5 +1,5 @@
-# What is SQL Alchemy?
-
+vv# What is SQL Alchemy?
+vvvvV
 SQL Alchemy is an ORM (Object-Relational Mapping) which allows us to work with the structure of the database is designed in a Class and we can work with rows in the database by reading them in as objects or creating our own objects and writing them to the database as new rows.
 
 We are using SQL Alchemy along with Flask so that it is aware of the context of our web application and is able to manage connections to the database when endpoints in our server are accessed by the user.
