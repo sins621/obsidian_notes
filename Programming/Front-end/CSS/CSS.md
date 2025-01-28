@@ -580,3 +580,50 @@ We can also set a *maximum* width as well as applying both rules at the same tim
 ```
 
 There are also context specific Media Queries that you might see such as `@media screen(orientation=landscape){}` to enable to you have separate rules for if the web-page was to be displayed on a screen or `@media print(){}` to be printed however that is quite rare these days.
+## Flexbox
+
+Flex is another `display` property that we can set in the hopes of making it simpler to make responsive web-pages. Let's look at how it works.
+
+Say we have the following layout:
+
+![](Pictures/CSS%20-%20No%20Flex.png)
+
+Let's now enclose this inside of a flexbox:
+
+![](Pictures/CSS%20-%20Flexbox.png)
+
+The flexbox by default aims to fit all of your elements in a single block while managing alignment. Width is automatically set depending on the width of the element and will resize dynamically depending on the width of the browser window. 
+
+The flexbox itself therefore will act as a single block taking up the entire width of the web-page however it is possible to make the flexbox inline should we wish to allow other elements to be present alongside it.
+
+![](Pictures/CSS%20-%20Inline%20Flex.png)
+
+### Flex Direction
+
+By default the main axis that a flexbox will align elements in is horizontally as a **row**. However we can change this to be vertically stacked by setting the `flex-direction` to **column**. 
+
+![](Pictures/CSS%20-%20Flex%20Direction.png)
+
+You can manage the size of elements inside of the flex box by increasing the `flex-basis` of **each element**. What this property manages is the size of elements within a flexbox along the *main axis*. Of the flexbox.
+
+Therefore, if the direction is set to row, flex-basis will manage the width and if it's set to column then flex-basis will manage the height.
+
+**Note**: Flex-basis must be set on each individual element *inside* of the flexbox, not on the flexbox itself.
+### Flex Layout
+
+The flexbox provides many properties to manage the layout of the flexbox and it's items. It's important to note the distinction between the parent and child. Certain properties or only valid on the flexbox container or the individual item of the flexbox and you will need to make use of a combination of these properties to achieve your desired layout.
+
+Let's look at a few of these properties.
+#### Order
+
+Flex items have an order property that works in the same manner as the Z-Index as we have spoken of previously. Be default, the order is dictated by the layout of our HTML document however we can modify the order property to ensure that elements with a higher order value are placed lower down in the list.
+
+![](Pictures/CSS%20-%20Flex%20Order.png)
+
+**Note**: In the case of the `direction` being set to *column* elements with higher order values will be placed at the bottom.
+#### Flex Warp
+
+By default `flex-wrap` is set to `nowrap`. The result of this is that when the browser page is too small to fit all of the elements inside of the flexbox, even after they have automatically resized themselves, the elements will be cropped out of the page and no longer be displayed. You can instead set this property to `wrap` so that when elements can no longer fit, elements at the end of the flex box will be displayed in the next available block space.
+
+![](Pictures/CSS%20-%20Wrap%20vs%20Nowrap.png)
+
