@@ -627,3 +627,76 @@ By default `flex-wrap` is set to `nowrap`. The result of this is that when the b
 
 ![](Pictures/CSS%20-%20Wrap%20vs%20Nowrap.png)
 
+#### ..and Many More
+
+To find more information on different flexbox properties simply visit [this](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) web-site to find a cheat sheet with accompanying graphics. 
+### Flex Sizing
+
+By default, the width of an element starts with whether or not it is a block element, in which case it's width will be the entire web-page, or if it's an inline-element where it's with is dictated by the size of the content.
+
+When a container is set as a flexbox all items within that container automatically become inline-block elements and there is an order of importance when it comes on having an effect on their size:
+
+	 Content Width < width < Flex-basis < min-width/max-width
+
+**Note**: When the flexbox direction is set to column then width becomes height in this case.
+
+![](Pictures/CSS%20-%20Flex%20Sizing.png)
+
+When we enable the flexbox we can see that elements inside the window will not have a uniform width but rather will be sized to the width of the content, in the case of our paragraph tags here the width will be the size of the entire paragraph on one line. 
+
+Let's see what happens when we make the window smaller:
+
+![](Pictures/CSS%20-%20Flex%20Sizing%20Small.png)
+
+Now we can see that words are wrapped on to new lines until the maximum length of the longest word in the text or rather the *minimum content size*. If you were to make the screen smaller then items at the end of the box will slip off screen. 
+
+This is the default behavior of a flexbox, the minimum and maximum widths are set by the *content-size*. 
+#### Width
+
+When manually setting the width of flex box items they will conform to the width set *until* there is not enough room to accommodate the combined width of all flexbox items in which case they will shrink down to the minimum width again.
+
+![](Pictures/CSS%20-%20Flexbox%20Width.png)
+
+#### Flex-basis
+
+When Flex-basis is set the width setting is no longer applicable and will be overruled. 
+
+![](Pictures/CSS%20-%20Flex-basis%20Over%20Width.png)
+
+#### Min-width/Max-width
+
+Previously we've mentioned that the minimum and maximum widths are determined by the content size.
+
+![](Pictures/CSS%20-%20Min-max.png)
+
+In the case of a paragraph this is dictated by the largest word and the length of the paragraph fitted on one line.
+
+**Remember**: The flexbox *shrinks* and *grows* and the minimum and maximum widths dictate what the minimum and maximum widths are that the content is allowed to shrink or grow to.
+
+![](Pictures/CSS%20-%20Max-width.png)
+
+In this example you can see that because the max-width is less than the flex-basis, the flex-basis is overruled and the max-width is honored instead. The same is true if the min-width is above the flex-basis, in that case the flex-basis will be overruled by the min-width.
+
+#### Growing and Shrinking
+
+Dynamically growing and shrinking elements based on the size of the browser window is what makes flexboxes so powerful however it is possible to disable or enable either one of these two behaviors.
+
+```css
+flex-basis: 100px;
+flex-grow: 0; /*disable*/
+flex-shrink: 0; /*disable*/
+```
+
+This is where the *flex-basis* comes in, it serves as the initial minimum, maximum size of the element when either of these properties are disabled.
+
+By default `flex-shrink` is enabled and `flex-grow` is disabled, there is also a shorthand to set all three of these parameters at once:
+
+```css
+flex: 0 0 100
+/* grow shrink basis */
+```
+
+You can also set ratios for items inside of a flexbox by using the shorthand `flex: {number}` where if the number is 1 grow and shrink will be enabled and if there is another item with `flex` set to a multiple of the first number that was set then it will be that many times larger than the other item.
+
+
+
