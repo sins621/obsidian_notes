@@ -230,3 +230,70 @@ We can also specify multiple breakpoints, this way the amount of columns that a 
 We can also mix and match multiple column layouts in a single row, Bootstrap will dynamically adjust the position of these columns based on the size of our web-page.
 
 **Note:** The lonely `col` column will automatically take up the remaining space in the row.
+# Bootstrap Render Forms
+
+We can use the `render_form()` Macro with Flask to render Bootstrap Styled Flask WTForms.
+
+First we will need to import Flask, Bootstrap and WTForms. Then we initialize our application and create our form class. In this example we're creating a form for a blogpost.
+
+**Note**: We are using a CKEditorField in this example but it is is not a necessary component to utilize Bootstrap Render Forms
+
+```python
+from flask import Flask
+from flask_bootstrap import Bootstrap5
+from flask_ckeditor import CKEditor, CKEditorField
+from wtforms import StringField, SubmitField
+from wtforms.validators import URL, DataRequired, Length
+
+app = Flask(__name__)
+Bootstrap5(app)
+
+class PostForm(FlaskForm):
+    title = StringField("Post Title", validators=[DataRequired(), Length(max=250)])
+    subtitle = StringField("Subtitle", validators=[DataRequired(), Length(max=250)])
+    author_name = StringField(
+        "Author Name", validators=[DataRequired(), Length(max=250)]
+    )
+    img_url = StringField(
+        "Image URL", validators=[DataRequired(), URL(), Length(max=250)]
+    )
+    body = CKEditorField("Post Body", validators=[DataRequired()])
+    submit = SubmitField("Submit", id="submit")
+```
+
+In order to render our form in HTML we can pass it through to our route using Jinja templates.
+
+```python
+# TODO: add_new_post() to create a new blog post
+@app.route("/new-post", methods=["GET", "POST"])
+def new_post():
+    new_post_form = PostForm()
+    return render_template("make-post.html", form=new_post_form)
+```
+
+We will need to import our form into our HTML page and place it:
+
+```html
+{% from 'bootstrap4/form.html' import render_form %}
+<div class="container">
+<div class="row">
+  <div class="col-lg-8 col-md-10 mx-auto">
+	{{ render_form(form) }}
+	<style>
+	  .form-control {
+		margin-bottom: 15px;
+	  }
+
+	  #submit {
+		margin-top: 15px;
+	  }
+	</style>
+  </div>
+</div>
+</div>
+```
+
+**Note**: We are simply adjusting the style using divs and classes for this example, the form on the webpage looks as follows:
+
+![](Pictures/Bootstrap%20CSS%20-%20Bootstrap%20Form%20Macro.png)
+
