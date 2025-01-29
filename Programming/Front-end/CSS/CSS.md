@@ -697,6 +697,59 @@ flex: 0 0 100
 ```
 
 You can also set ratios for items inside of a flexbox by using the shorthand `flex: {number}` where if the number is 1 grow and shrink will be enabled and if there is another item with `flex` set to a multiple of the first number that was set then it will be that many times larger than the other item.
+## Grid
 
+Flexbox is useful for creating responsive layouts in single dimensions such as columns and rows however it can be complicated to create aligned layouts in 2 dimensions with only flexbox alone.
 
+![](Pictures/CSS%20-%20Flexbox%20vs%20Grid.png)
 
+The key difference is how the two react when wrapping content over to new blocks. Flexbox manages the layout block by block ensuring each element conforms neatly with those around it inline with the rules you've set where as grid aims to maintain a grid layout with respect to the entire grid and all lines it flows over.
+
+![](Pictures/CSS%20-%20Grid%20Responsiveness.png)
+
+#### Syntax
+
+Say we have a simple HTML page with a few paragraphs.
+
+```html
+<div class="container">
+	<p>...</p>
+	<p>...</p>
+	<p>...</p>
+	<p>...</p>
+</div>
+```
+
+First we set the display mode to grid.
+
+	 display: grid;
+
+Then we define our column/row template to outline the amount of blocks and their sizes. The amount of values provided dictates the amount of cells.
+
+	 grid-template-columns: 1fr 2fr;
+	 grid-template-rows: 1fr 1fr;
+
+Finally we add a gap between elements the same way we have done in the past.
+
+	 gap: 10px;
+
+![](Pictures/CSS%20-%20Grid%20Basic%20Layout.png)
+
+`fr` In this instance refers to **fraction** which is a new unit of length introduced with grid. You can use it to specify lengths of cells as *fractional* values, well, it's more multiplicable whatever you no? Basically, pay attention to our columns, you can see that the blue block which has a length of `2fr` is twice the size of our green block which has a length of `1fr`. However, as for our rows which both have a length of `1fr`, they are equal size.
+
+#### Sizing
+
+We determine the size of our cells by specifying that inside of our template declaration. We can individually specify columns and rows as we have earlier however we can also use a shorthand by separating the two using a forward slash:
+
+	 grid-template: 100px 200px / 400px 800px;
+
+![](Pictures/CSS%20-%20Grid%20Sizing.png)
+
+We can also use the *auto* keyword which will automatically and responsively manage the size of the grid however it's important to understand that it functions differently for rows and columns.
+
+	 grid-template-rows: 100px auto;
+	 grid-template-columns: 200px auto;
+
+![](Pictures/CSS%20-%20Grid%20Auto%20Keyword.png)
+
+Columns with the *auto* length set will attempt to responsively grow to the size of what space is leftover in the browser window however grids set to *auto* will grow to the size of the **content** inside of the cell.
