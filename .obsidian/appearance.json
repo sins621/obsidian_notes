@@ -10,5 +10,6 @@
   "interfaceFontFamily": "",
   "textFontFamily": "",
   "nativeMenus": false,
-  "theme": "obsidian"
+  "theme": "obsidian",
+  "showRibbon": false
 }
