@@ -1,4 +1,4 @@
-# Introducdtion
+# Introduction
 
 ![](Pictures/Fibonacci%20Numbers%20-%20Sequence.png)
 
