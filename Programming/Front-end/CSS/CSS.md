@@ -752,4 +752,4 @@ We can also use the *auto* keyword which will automatically and responsively man
 
 ![](Pictures/CSS%20-%20Grid%20Auto%20Keyword.png)
 
-Columns with the *auto* length set will attempt to responsively grow to the size of what space is leftover in the browser window however grids set to *auto* will grow to the size of the **content** inside of the cell.
+Columns with the *auto* length set will attempt to responsively grow to the size of what space is leftover in the browser window however grids set to *auto* will grow to the size of the **content** inside of the cell.`
