@@ -6,20 +6,22 @@ kanban-plugin: board
 
 ## Backlog
 
-- [ ] Add !songrequest from Spotify API
-	#backend
-- [ ] Add !song from Spotify API
-	#backend
 
 
 ## To-do
 
-- [ ] Write Spotify API Calls from Scratch
+- [ ] Add !songrequest from Spotify API
+	#backend
+- [ ] Add !song from Spotify API
+	#backend
+- [ ] Add !songrequest from Spotify API
 	#backend
 
 
 ## Done
 
+- [ ] Write Spotify API Calls from Scratch
+	#backend
 - [ ] Split into Files
 	#refactor
 

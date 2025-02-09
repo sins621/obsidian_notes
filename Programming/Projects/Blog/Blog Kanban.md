@@ -20,10 +20,6 @@ kanban-plugin: board
 
 - [ ] Figure out how to Nest List Items
 	#logic
-- [ ] Refactor Python Server
-	#refactor
-	> Add Try Catches
-	> Better Logging
 
 
 ## Done
