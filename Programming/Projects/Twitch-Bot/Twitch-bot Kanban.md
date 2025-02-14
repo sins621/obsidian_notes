@@ -12,18 +12,18 @@ kanban-plugin: board
 
 - [ ] Add !songrequest from Spotify API
 	#backend
-- [ ] Add !song from Spotify API
-	#backend
-- [ ] Add !songrequest from Spotify API
-	#backend
 
 
 ## Done
 
+- [ ] Add !song from Spotify API
+	#backend
 - [ ] Write Spotify API Calls from Scratch
 	#backend
 - [ ] Split into Files
 	#refactor
+- [ ] Add !skip from Spotify API
+	#backend
 
 
 
