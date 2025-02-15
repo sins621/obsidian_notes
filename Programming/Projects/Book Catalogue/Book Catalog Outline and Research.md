@@ -27,10 +27,17 @@ The intent is to create a website where-by a library, or book store can show off
 	- Role
 
 - Book Database
-	- Name
-	- Image Link
+	- Title
+	- Author
+	- Abstract
+	- Cover Link
 	- ISBN Number
 	- Quantity
 	- Reviews
+	- Rating
 	- Price
 	- ...
+# Scratch Pad
+## Basic Book Adding Flow
+
+![](Pictures/Book%20Add%20Flow.png)
