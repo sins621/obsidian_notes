@@ -10,6 +10,7 @@ The intent is to create a website where-by a library, or book store can show off
 ## Bonus
 
 - [ ] User Reviews
+- [ ] User Ratings
 # Research
 
 ## Book API Endpoints
@@ -30,13 +31,9 @@ The intent is to create a website where-by a library, or book store can show off
 	- Title
 	- Author
 	- Abstract
-	- Cover Link
-	- ISBN Number
+	- Cover ID
 	- Quantity
-	- Reviews
-	- Rating
 	- Price
-	- ...
 # Scratch Pad
 ## Basic Book Adding Flow
 
