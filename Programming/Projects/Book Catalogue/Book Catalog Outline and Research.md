@@ -30,6 +30,8 @@ The intent is to create a website where-by a library, or book store can show off
 - Book Database
 	- Title
 	- Author
+	- Publish Year
+	- Category
 	- Abstract
 	- Cover ID
 	- Quantity
