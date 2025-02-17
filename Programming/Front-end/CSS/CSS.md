@@ -745,6 +745,7 @@ We determine the size of our cells by specifying that inside of our template dec
 
 ![](Pictures/CSS%20-%20Grid%20Sizing.png)
 
+##### Auto
 We can also use the *auto* keyword which will automatically and responsively manage the size of the grid however it's important to understand that it functions differently for rows and columns.
 
 	 grid-template-rows: 100px auto;
@@ -752,4 +753,112 @@ We can also use the *auto* keyword which will automatically and responsively man
 
 ![](Pictures/CSS%20-%20Grid%20Auto%20Keyword.png)
 
-Columns with the *auto* length set will attempt to responsively grow to the size of what space is leftover in the browser window however grids set to *auto* will grow to the size of the **content** inside of the cell.`
+Columns with the *auto* length set will attempt to responsively grow to the size of what space is leftover in the browser window however grids set to *auto* will grow to the size of the **content** inside of the cell.
+
+##### Minmax
+We can use `minmax` to set a minimum and maximum value for our grid cells. This will dynamically update the cell size based on the window size.
+
+```css
+.grid-container{
+	display: grid;
+	grid-template-rows: 200px 400px;
+	grid-template-columns: 200px minmax(400px, 800px)
+}
+```
+
+![](Pictures/CSS%20-%20Grid%20Min-Max.png)
+
+![](Pictures/CSS%20-%20Grid%20Max.png)
+
+##### Repeat
+
+Instead of repeating our size input for each grid cell we want to create we can just use the `repeat()` function.
+
+	 grid-template-rows: repeat({amount}, {size});
+
+#### Overflow
+
+If you have extra elements inside of the grid that you have not accounted for when declaring your layout in the grid template then those elements will overflow onto a new row and column.
+
+```css
+.grid-container{
+	display: grid;
+	grid-template-rows: 1rf 1rf;
+	grid-template-columns: 1rf, 1rf;
+}
+```
+
+![](Pictures/CSS%20-%20Grid%20Overflow.png)
+
+You can specify what happens to cells that are automatically created by using the `grid-auto-rows` property.
+
+```css
+.grid-container{
+	display: grid;
+	grid-template-rows: 1rf 1rf;
+	grid-template-columns: 1rf, 1rf;
+	grid-auto-rows: 1rf;
+}
+```
+
+![](Pictures/CSS%20-%20Auto%20Rows.png)
+
+### Placement
+
+Let's define some of the terms that are used often when discussing the CSS Grid.
+
+The **container** is usually the element that contains all of the items, this is usually a `div`. The items that are placed inside of the grid are referred to as the **grid items**.'
+
+![](Pictures/CSS%20-%20Grid%20Container%20and%20Grid%20Items.png)
+
+When we create and size our grid, we create **rows** and **columns**, these are collectively known as **tracks**. We have row tracks and column tracks and we usually create and size them using `grid-template-rows` and `grid-template-columns`.
+
+![](Pictures/CSS%20-%20Grid%20Tracks.png)
+
+Within the intersections of our tracks we create these small units called **cells**. They are the smallest unit in the grid however it is possible for them to be different sizes. We can create complex layouts by allowing our grid items to span over multiple cells.
+
+![](Pictures/CSS%20-%20Grid%20Cell.png)
+
+Finally the lines that separate our tracks are simply referred to as **grid lines**. We can only control grid lines by using the `gap` property to specify it's size. 
+
+![](Pictures/CSS%20-%20Grid%20Lines.png)
+#### Span
+
+If we want items to span over multiple grid cells then we can set the `grid-column` or `grid-row` properties to `span {amount}`.
+
+![](Pictures/CSS%20-%20Column%20Span.png)
+
+**Note**: `grid-column` is actually a shorthand property for two other properties, namely `grid-column-start` and `grid-column-end`. Let's look at the example we just set:
+
+```css
+.item{
+	grid-column: span 2;
+		grid-column-start: span 2;
+		grid-column-end: auto;
+}
+```
+
+The indented code is the actual underlying code produced by the shorthand. This dictates where the item should start and end inside the grid column. We can for example explicitly adjust these values to produce the following result:
+
+```css
+.item{
+	grid-column-start: 2;
+	grid-column-end: 4;
+}
+```
+
+![](Pictures/CSS%20-%20Column%20Start%20and%20End.png)
+
+**Note**: We can also use *negative* values to specify column start and endpoints just as you would use negative values to target list indexes in python.
+#### Order
+
+Grid also has an **order** property which functions the same as it does with regards to flexboxes where items with higher order weightings are placed later inside the grid.
+
+#### Area
+
+We can use the shorthand `grid-area` to specify the column & row, start & end all in one line:
+
+	 grid-area: {row-start} / {col-start} / {row-end} / {col-end};
+
+**Note**: If you use grid area on one item you will then need to declare it on *all* items.
+
