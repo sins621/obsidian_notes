@@ -9,8 +9,11 @@ The intent is to create a website where-by a library, or book store can show off
 - [ ] Admin User Creation and Login, tutorial [here](https://www.youtube.com/watch?v=Nlg0JrUt0qg).
 ## Bonus
 
+- [ ] User Profile
 - [ ] User Reviews
 - [ ] User Ratings
+- [ ] Cart Functionality
+- [ ] Newsletter
 # Research
 
 ## Book API Endpoints
@@ -22,8 +25,9 @@ The intent is to create a website where-by a library, or book store can show off
 - ISBN Numbers?
 # Database Structure
 
-- User Database
+- Administrator Database
 	- Username
+	- Email Address
 	- Password
 	- Role
 
@@ -37,6 +41,26 @@ The intent is to create a website where-by a library, or book store can show off
 	- Quantity
 	- Price
 # Scratch Pad
+## DB Object Structure
+
+```json
+{
+    id: 3,
+    title: 'The Hobbit',
+    author: 'J.R.R. Tolkien',
+    category: 'Fantasy',
+    publish_year: 1937,
+    abstract: "Bla bla bla long abstract text etc fdklsjfdklsjf ...",
+    cover_id: 14627509,
+    quantity: 10,
+    price: '299.99'
+  }
+```
 ## Basic Book Adding Flow
 
 ![](Pictures/Book%20Add%20Flow.png)
+
+## Layout Ideas
+### Main Page:
+
+![](Pictures/Front%20Page.png)
