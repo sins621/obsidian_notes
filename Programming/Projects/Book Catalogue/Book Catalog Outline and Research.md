@@ -14,6 +14,7 @@ The intent is to create a website where-by a library, or book store can show off
 - [ ] User Ratings
 - [ ] Cart Functionality
 - [ ] Newsletter
+- [ ] Breadcrumb For Book Links
 # Research
 
 ## Book API Endpoints
@@ -63,4 +64,14 @@ The intent is to create a website where-by a library, or book store can show off
 ## Layout Ideas
 ### Main Page:
 
+Front-end To-do:
+- [ ] Finish Footer
+- [ ] Fold Navbar
+- [ ] Unsticky Navbar at Mobile Height
+- [ ] Create Routes to Book Pages
+- [ ] Categories as Filters not Links
 ![](Pictures/Front%20Page.png)
+### Footer Design
+
+![](Pictures/Footer%20Design.png)
+
