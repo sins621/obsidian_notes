@@ -2,10 +2,9 @@
 
 The intent is to create a website where-by a library, or book store can show off their catalog along with reviews and images. 
 
-- [ ] Database of Books
+- [x] Database of Books
 - [ ] Sorted by Categories
-- [ ] Reviews and Images from a Public API
-- [ ] Bootstrap For Styling
+- [x] Reviews and Images from a Public API
 - [ ] Admin User Creation and Login, tutorial [here](https://www.youtube.com/watch?v=Nlg0JrUt0qg).
 ## Bonus
 
@@ -15,6 +14,7 @@ The intent is to create a website where-by a library, or book store can show off
 - [ ] Cart Functionality
 - [ ] Newsletter
 - [ ] Breadcrumb For Book Links
+- [ ] Limit Books Shown to 2x Grid Width with Show More Button
 # Research
 
 ## Book API Endpoints
@@ -65,9 +65,9 @@ The intent is to create a website where-by a library, or book store can show off
 ### Main Page:
 
 Front-end To-do:
-- [ ] Finish Footer
+- [x] Finish Footer
 - [ ] Fold Navbar
-- [ ] Unsticky Navbar at Mobile Height
+- [x] Unsticky Navbar at Mobile Height
 - [ ] Create Routes to Book Pages
 - [ ] Categories as Filters not Links
 ![](Pictures/Front%20Page.png)
@@ -75,3 +75,16 @@ Front-end To-do:
 
 ![](Pictures/Footer%20Design.png)
 
+### Book View:
+
+Book View To-do:
+
+- [x] Assign Routes to Each Book
+	- [x] Add Route to Index.js
+	- [x] Create View EJS File
+	- [x] Pass Book info to Route
+	- [x] Render EJS File with Book Info
+- [x] Render Large Cover
+- [ ] Create CSS File For Card
+
+![](Pictures/Book%20View.png)
