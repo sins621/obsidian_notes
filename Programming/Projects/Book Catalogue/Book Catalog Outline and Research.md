@@ -85,6 +85,6 @@ Book View To-do:
 	- [x] Pass Book info to Route
 	- [x] Render EJS File with Book Info
 - [x] Render Large Cover
-- [ ] Create CSS File For Card
+- [x] Create CSS File For Card
 
 ![](Pictures/Book%20View.png)
