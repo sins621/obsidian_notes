@@ -5,7 +5,7 @@ The intent is to create a website where-by a library, or book store can show off
 - [x] Database of Books
 - [x] Sorted by Categories
 - [x] Reviews and Images from a Public API
-- [ ] Admin User Creation and Login, tutorial [here](https://www.youtube.com/watch?v=Nlg0JrUt0qg).
+- [x] Admin User Creation and Login, tutorial [here](https://www.youtube.com/watch?v=Nlg0JrUt0qg).
 ## Bonus
 
 - [ ] User Profile
