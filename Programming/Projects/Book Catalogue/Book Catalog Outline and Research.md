@@ -68,8 +68,8 @@ Front-end To-do:
 - [x] Finish Footer
 - [ ] Fold Navbar
 - [x] Unsticky Navbar at Mobile Height
-- [ ] Create Routes to Book Pages
-- [ ] Categories as Filters not Links
+- [x] Create Routes to Book Pages
+- [x] Categories as Filters not Links
 ![](Pictures/Front%20Page.png)
 ### Footer Design
 
