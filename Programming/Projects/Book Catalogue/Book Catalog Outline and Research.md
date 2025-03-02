@@ -17,7 +17,7 @@ The intent is to create a website where-by a library, or book store can show off
 - [ ] Limit Books Shown to 2x Grid Width with Show More Button
 - [ ] User Management Panel
 - [ ] Logging
-- [ ] Make Login and Register Pages Nice
+- [ ] Make Login and Register Pages **Nice**
 
 ## Bugs
 
