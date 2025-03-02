@@ -8,13 +8,20 @@ The intent is to create a website where-by a library, or book store can show off
 - [x] Admin User Creation and Login, tutorial [here](https://www.youtube.com/watch?v=Nlg0JrUt0qg).
 ## Bonus
 
-- [ ] User Profile
-- [ ] User Reviews
-- [ ] User Ratings
+- [x] User Profile
+- [x] User Reviews
+- [x] User Ratings
 - [ ] Cart Functionality
 - [ ] Newsletter
 - [ ] Breadcrumb For Book Links
 - [ ] Limit Books Shown to 2x Grid Width with Show More Button
+- [ ] User Management Panel
+- [ ] Logging
+- [ ] Make Login and Register Pages Nice
+
+## Bugs
+
+- [ ] Logging in redirects to home instead of the last page accessed.
 # Research
 
 ## Book API Endpoints
@@ -88,3 +95,10 @@ Book View To-do:
 - [x] Create CSS File For Card
 
 ![](Pictures/Book%20View.png)
+
+### User Reviews:
+
+![](Pictures/User%20Reviews%20Design.png)
+
+
+
