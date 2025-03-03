@@ -100,5 +100,12 @@ Book View To-do:
 
 ![](Pictures/User%20Reviews%20Design.png)
 
+## Cart
 
-
+Cart To-do:
+- [x] Add Model to Database
+- [x] Add "Add to Cart" Button to Book View
+- [ ] Create Post Route to Insert Book Data into Carts Database
+- [ ] Add Cart Tab to Navbar for Logged in Users
+- [ ] Show Amount of Items in Cart in Navbar
+- [ ] Create "Cart" View with Table of Items in Cart
