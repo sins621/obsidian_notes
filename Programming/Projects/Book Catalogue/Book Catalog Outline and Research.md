@@ -11,14 +11,15 @@ The intent is to create a website where-by a library, or book store can show off
 - [x] User Profile
 - [x] User Reviews
 - [x] User Ratings
-- [ ] Cart Functionality
+- [x] Cart Functionality
 - [ ] Newsletter
-- [ ] Breadcrumb For Book Links
+- [x] Breadcrumb For Book Links
 - [ ] Limit Books Shown to 2x Grid Width with Show More Button
 - [ ] User Management Panel
 - [ ] Logging
 - [ ] Make Login and Register Pages **Nice**
-
+- [ ] Add Orders Tables (3rd Normal Form)
+- [ ] Add Sold Table (5th Normal Form)
 ## Bugs
 
 - [ ] Logging in redirects to home instead of the last page accessed.
@@ -105,7 +106,13 @@ Book View To-do:
 Cart To-do:
 - [x] Add Model to Database
 - [x] Add "Add to Cart" Button to Book View
-- [ ] Create Post Route to Insert Book Data into Carts Database
-- [ ] Add Cart Tab to Navbar for Logged in Users
-- [ ] Show Amount of Items in Cart in Navbar
-- [ ] Create "Cart" View with Table of Items in Cart
+- [x] Create Post Route to Insert Book Data into Carts Database
+- [x] Add Cart Tab to Navbar for Logged in Users
+- [x] Show Amount of Items in Cart in Navbar
+- [x] Create "Cart" View with Table of Items in Cart
+
+Cart Logic
+
+- Cart Object
+	- Foreign Keys Linked to Items Purchased
+	- When Clicking Place Order, Convert Cart Object to Order Object
