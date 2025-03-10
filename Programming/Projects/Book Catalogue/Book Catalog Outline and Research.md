@@ -12,11 +12,11 @@ The intent is to create a website where-by a library, or book store can show off
 - [x] User Reviews
 - [x] User Ratings
 - [x] Cart Functionality
-- [ ] Newsletter
+- [x] Newsletter
 - [x] Breadcrumb For Book Links
 - [ ] Limit Books Shown to 2x Grid Width with Show More Button
 - [ ] User Management Panel
-- [ ] Logging
+- [x] Logging
 - [ ] Make Login and Register Pages **Nice**
 - [ ] Add Orders Tables (3rd Normal Form)
 - [ ] Add Sold Table (5th Normal Form)
@@ -128,6 +128,9 @@ Users can subscribe to the newsletter where they will receive notifications for 
 
 The database should be 3rd normal form.
 
-| id  | email |
-| --- | ----- |
-|     |       |
+| id  | user_id | email               | name |
+| --- | ------- | ------------------- | ---- |
+| 4   | 14      | sinsmailza@gmai.com | sins |
+Schema Notes:
+
+Email and Name are referencing the *Users* table and so they will need to copy the information. `user_id` is a *Foreign Key* to the *Users* table.
