@@ -11,7 +11,7 @@ The intent is to create a website where-by a library, or book store can show off
 - [x] User Profile
 - [x] User Reviews
 - [x] User Ratings
-- [ ] Cart Functionality
+- [x] Cart Functionality
 - [ ] Newsletter
 - [ ] Breadcrumb For Book Links
 - [ ] Limit Books Shown to 2x Grid Width with Show More Button
