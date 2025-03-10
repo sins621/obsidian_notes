@@ -25,6 +25,7 @@ The intent is to create a website where-by a library, or book store can show off
 - [ ] Logging in redirects to home instead of the last page accessed.
 # Research
 
+Useful links and resources.
 ## Book API Endpoints
 
 - [Open Library](https://openlibrary.org/developers/api)
@@ -50,6 +51,8 @@ The intent is to create a website where-by a library, or book store can show off
 	- Quantity
 	- Price
 # Scratch Pad
+
+Space to brainstorm and map out ideas.
 ## DB Object Structure
 
 ```json
@@ -116,3 +119,15 @@ Cart Logic
 - Cart Object
 	- Foreign Keys Linked to Items Purchased
 	- When Clicking Place Order, Convert Cart Object to Order Object
+## Newsletter
+
+Users can subscribe to the newsletter where they will receive notifications for new books.
+
+**Bonus**: Add Notify by Category
+### Database Structure
+
+The database should be 3rd normal form.
+
+| id  | email |
+| --- | ----- |
+|     |       |
