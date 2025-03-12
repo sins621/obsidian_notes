@@ -23,6 +23,10 @@ The intent is to create a website where-by a library, or book store can show off
 ## Bugs
 
 - [ ] Logging in redirects to home instead of the last page accessed.
+## Issues
+
+1. Multiple Roles is not Implemented Correctly. Fundamental Design Flaw in How Records are Updated and Included.
+2. Components That React to User Interaction Should not be Rendered Server Side
 # Research
 
 Useful links and resources.
@@ -134,3 +138,4 @@ The database should be 3rd normal form.
 Schema Notes:
 
 Email and Name are referencing the *Users* table and so they will need to copy the information. `user_id` is a *Foreign Key* to the *Users* table.
+
