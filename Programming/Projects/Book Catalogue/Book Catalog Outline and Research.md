@@ -14,12 +14,13 @@ The intent is to create a website where-by a library, or book store can show off
 - [x] Cart Functionality
 - [x] Newsletter
 - [x] Breadcrumb For Book Links
-- [ ] Limit Books Shown to 2x Grid Width with Show More Button
-- [ ] User Management Panel
+- [x] User Management Panel
 - [x] Logging
-- [ ] Make Login and Register Pages **Nice**
-- [ ] Add Orders Tables (3rd Normal Form)
-- [ ] Add Sold Table (5th Normal Form)
+- [ ] Add Orders Tables
+- [ ] Add Sold Table
+- [ ] Add Panel to Mark Orders as Completed
+- [ ] Add Panel for Users to Track Orders
+- [ ] Style Website
 ## Bugs
 
 - [ ] Logging in redirects to home instead of the last page accessed.
@@ -27,6 +28,8 @@ The intent is to create a website where-by a library, or book store can show off
 
 1. Multiple Roles is not Implemented Correctly. Fundamental Design Flaw in How Records are Updated and Included.
 2. Components That React to User Interaction Should not be Rendered Server Side
+3. Communication Between Models can be Improved, Possibly with the User of Interfaces
+4. Cart is Missing Features (Delete, Checkout)
 # Research
 
 Useful links and resources.
@@ -135,7 +138,21 @@ The database should be 3rd normal form.
 | id  | user_id | email               | name |
 | --- | ------- | ------------------- | ---- |
 | 4   | 14      | sinsmailza@gmai.com | sins |
-Schema Notes:
 
 Email and Name are referencing the *Users* table and so they will need to copy the information. `user_id` is a *Foreign Key* to the *Users* table.
 
+## Orders
+
+Orders will need 1. an *Orders* table and 2. a *Sold* table. The mailer class can can be used to send the user an email when their order has been placed and when the sale is marked as complete by an administrator the user can receive an email after a month to be reminded to review the book on the web-page. When sales are completed they should reduce the amount of available books from the catalog and the entry should be deleted in the catalog when there are no more remaining.
+
+The *Orders* table should make reference to the users table as well as the books table. It should also track the progress of an order such as "Placed", "Delivery" and "Complete".
+
+**Problem**: If a book is removed from the catalog it will also be removed from this table. Hmm.. Maybe When being displayed it should join info from the *Sold* table instead of being a *Foreign Key*.
+
+| id  | user_id | email           | book_id | book_title       | order_status | payment_status |
+| --- | ------- | --------------- | ------- | ---------------- | ------------ | -------------- |
+| 1   | 3       | fella@fella.com | 5       | The Great Gatsby | Placed       | Pending        |
+| 2   | 4       | cool@cool.com   | 2       | Willy Wonka      | Complete     | Paid           |
+`email` and `user_id` reference the *Users* table, `user_id` will be a *Foreign Key*. `book_id` and `book_title` reference the *Books* table, `book_id` will be a *Foreign Key.*
+
+The *Sold* or *Sales* table will have no relational data and only handle logging past events so that when orders are completed the information can be examined at a later date if necessary.
