@@ -1,8 +1,7 @@
 {
-  "cssTheme": "Obsidian gruvbox",
+  "cssTheme": "",
   "enabledCssSnippets": [
-    "opacity",
-    "custom"
+    "opacity"
   ],
   "accentColor": "",
   "monospaceFontFamily": "",
