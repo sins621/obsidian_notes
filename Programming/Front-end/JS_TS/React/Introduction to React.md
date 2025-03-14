@@ -9,7 +9,7 @@ A basic react application has the following file structure:
 
 In our project we will only have a **single** html file and js file. These will serve as our entry points into our 'web-application'.
 
-## index.html:
+### index.html:
 
 ```html nums {9, 10}
 <!DOCTYPE html>
@@ -27,8 +27,7 @@ In our project we will only have a **single** html file and js file. These will 
 ```
 
 Our index.html file only consists of a `div` with an `id` of "root". This will serve as an entry point to our application as React will be used to render all the html relevant to our application inside of this `div`.
-
-**index.js**
+### index.js
 
 ```jsx nums{6-8}
 import React from "react";
@@ -43,7 +42,8 @@ ReactDOM.render(
 );
 ```
 
-**App.jsx**
+This is the file linked to our index.html file and it serves as the entry point for our React application. You will notice that we have html inside of our js file and this is because the file is *actually* a `jsx` file. It is convention to leave it as a js file for the browser. We import React and ReactDOM and call the `render` which first expects *what* you want to render and finally *where* you would like to render it.
+### App.jsx
 
 ```jsx nums {8-12}
 import React from "react";
@@ -64,3 +64,70 @@ function App() {
 export default App;
 ```
 
+The `App.jsx` file serves as the entry point to all of our React **components**. 
+## Components
+
+React helps unify the three files that are used to create webpages, html, css and js, in a single workflow by separating webpages into **components**. 
+
+![](Pictures/React%20Components.png)
+
+A single component is generally found in a `components` folder and will consist of a function which returns some html.
+
+```jsx nums {9-11, 25-27, 31}
+import React from "react";
+
+function Heading() {
+  const date = new Date();
+  const currentTime = date.getHours();
+
+  let greeting;
+
+  const customStyle = {
+    color: ""
+  };
+
+  if (currentTime < 12) {
+    greeting = "Good Morning";
+    customStyle.color = "red";
+  } else if (currentTime < 18) {
+    greeting = "Good Afternoon";
+    customStyle.color = "green";
+  } else {
+    greeting = "Good Night";
+    customStyle.color = "blue";
+  }
+
+  return (
+    <h1 className="heading" style={customStyle}>
+      {greeting}
+    </h1>
+  );
+}
+
+export default Heading;
+```
+
+Let's pay attention to the highlighted code segments. There's a lot to unpack from line 25 to line 27. Let's look at a few key points:
+
+- Element attributes are pascal-cased as is the naming convention in Javascript.
+- Styles can be defined as Javascript objects and passed in as objects to the style attribute. See object declaration on line 9.
+- Javascript can be inserted into html using squiggly braces.
+
+Finally on line 31 the function is exported to be imported as a module in another file, in our example it will be imported to `App.jsx`.
+
+```jsx nums {2, 7}
+import React from "react";
+import Heading from "./Heading";
+
+function App() {
+  return (
+    <div>
+      <Heading />
+    </div>
+  );
+}
+
+export default App;
+```
+
+First we import our module on line 2 and finally we can see that it is used inside of our 'html' as it's own element with a self-closing tag.
