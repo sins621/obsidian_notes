@@ -156,3 +156,94 @@ The *Orders* table should make reference to the users table as well as the books
 `email` and `user_id` reference the *Users* table, `user_id` will be a *Foreign Key*. `book_id` and `book_title` reference the *Books* table, `book_id` will be a *Foreign Key.*
 
 The *Sold* or *Sales* table will have no relational data and only handle logging past events so that when orders are completed the information can be examined at a later date if necessary.
+# Operation Fix
+
+Issues that need to be solved before I can move on without going insane.
+
+- [ ] ONLY use ejs for static elements when rendering routes.
+- [ ] Use ejs to render 'components' and update these components with Ajax queries.
+- [ ] Fetch categories from the server instead of them being pulled from a constant.
+- [ ] Investigate express() routers.
+- [ ] Protect API calls with cookies?
+## Non-static EJS.
+
+The following routes are using ejs for non-static elements and need to be fixed:
+
+- [x] Home
+- [x] Book View
+- [ ] Reviews
+- [ ] User-Panel
+- [ ] Cart
+### Home
+
+Currently books are pulled in and sorted from the backend. Maybe the entire books grid can be rendered ejs from the back-end?
+### Book View:
+
+The book card is rendered from the backend, this will complicate adding cart icons dynamically.
+
+**NOTE TO SELF**: You can only access the `response.text()` property on a `fetch()` query **ONCE** lmaooooooo.
+### Reviews.
+
+Iirc the review component is one piece with the entree field and reviews itself. Split reviews into a api call to a rendered ejs file which queries the backend and have the review addition field be it's own thing.
+
+- [x] Adding reviews as manual post requests instead of forms.
+- [ ] Fetching all reviews as get requests instead of server side rendering.
+### User panel.
+
+Table is rendered from the back-end requiring full page refreshes when deleting users. Instead, server this from an api.
+### Cart
+
+Same limitations as the user panel.
+## Components as API calls.
+
+Instead of building EJS for components when the page is called, server them via an API so that they can be refreshed when other tasks are done. For example:
+
+```javascript
+async function addToCart(userId, bookId) {
+    console.log("updating cart");
+    const RESPONSE = await fetch("/add_cart", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        book_id: bookId,
+        user_id: userId,
+      })
+    });
+    if (RESPONSE.status === 200) {
+      await updateCart(
+        userId); // Ensure the cart updates only after the request succeeds
+    } else {
+      console.error("Failed to add to cart:", RESPONSE.status);
+    }
+  }
+```
+
+This function calls `updateCart()` after the item has been successfully added to the cart. This updates the cart size number dynamically without needing a full page refresh.
+
+```javascript
+const cartNum = document.getElementById("cart-size");
+  <% if (locals.user) { %>
+  const userId = <%= user.id %>;
+  updateCart(userId, cartNum);
+  <% } %>
+
+  async function updateCart(userId) {
+    const QUERY = await fetch(`/fetch_cart_size?user_id=${userId}`)
+    const CART_SIZE = await QUERY.json();
+    cartNum.innerHTML = CART_SIZE.cart_size;
+    console.log(CART_SIZE)
+  }
+```
+## Category Sorting
+
+No idea bra
+## Express Routers
+
+Maybe express routers is the solution to splitting up the project into different files?
+## Protect API Calls.
+
+Test if `req.user.isAuthenticated()` can be used to protect endpoints. 
+
+This does not seem to work.
