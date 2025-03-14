@@ -130,4 +130,5 @@ function App() {
 export default App;
 ```
 
-First we import our module on line 2 and finally we can see that it is used inside of our 'html' as it's own element with a self-closing tag.
+First we import our module on line 2 and finally we can see that it is used inside of our 'html' as it's **own element** with a self-closing tag.
+
