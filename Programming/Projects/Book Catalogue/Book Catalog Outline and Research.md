@@ -236,6 +236,8 @@ const cartNum = document.getElementById("cart-size");
     console.log(CART_SIZE)
   }
 ```
+
+**NOTE**: This approach ==does not work==. Scripts not present when the page is 
 ## Category Sorting
 
 No idea bra
