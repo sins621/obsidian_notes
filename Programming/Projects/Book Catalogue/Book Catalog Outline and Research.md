@@ -15,8 +15,8 @@ The intent is to create a website where-by a library, or book store can show off
 - [x] User Reviews
 - [x] User Ratings
 - [x] Cart Functionality
-- [ ] Newsletter
-	- [ ] Ability to Sign up in Footer
+- [x] Newsletter
+	- [x] Ability to Sign up in Footer
 - [x] Breadcrumb For Book Links
 - [ ] User Management Panel
 	- [ ] View User's Highest Roles
@@ -27,7 +27,10 @@ The intent is to create a website where-by a library, or book store can show off
 	- [ ] Users Need to be Able to Checkout Their Carts
 - [ ] Add Sold Table
 - [ ] Add Panel to Mark Orders as Completed
+- [ ] Refine `databaseService.js` error handling.
 - [ ] Style Website
+- [ ] Add Visual Indicators to Respond to User Actions that Don't Change the Page State
+	- [ ] Signing up to the Newsletter
 ## Bugs
 
 - [ ] Logging in redirects to home instead of the last page accessed.
