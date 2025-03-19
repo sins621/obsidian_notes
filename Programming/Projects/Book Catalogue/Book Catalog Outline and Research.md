@@ -8,18 +8,25 @@ The intent is to create a website where-by a library, or book store can show off
 - [x] Admin User Creation and Login, tutorial [here](https://www.youtube.com/watch?v=Nlg0JrUt0qg).
 ## Bonus
 
-- [x] User Profile
+- [ ] User Profile
+	- [ ] View Purchase History
+	- [ ] Add Panel for Users to Track Orders
+	- [ ] View Reviews
 - [x] User Reviews
 - [x] User Ratings
 - [x] Cart Functionality
-- [x] Newsletter
+- [ ] Newsletter
+	- [ ] Ability to Sign up in Footer
 - [x] Breadcrumb For Book Links
-- [x] User Management Panel
-- [x] Logging
+- [ ] User Management Panel
+	- [ ] View User's Highest Roles
+	- [ ] Delete Users
+	- [ ] Manually Add Users
+- [ ] Logging
 - [ ] Add Orders Tables
+	- [ ] Users Need to be Able to Checkout Their Carts
 - [ ] Add Sold Table
 - [ ] Add Panel to Mark Orders as Completed
-- [ ] Add Panel for Users to Track Orders
 - [ ] Style Website
 ## Bugs
 
@@ -27,8 +34,8 @@ The intent is to create a website where-by a library, or book store can show off
 ## Issues
 
 1. Multiple Roles is not Implemented Correctly. Fundamental Design Flaw in How Records are Updated and Included.
-2. Components That React to User Interaction Should not be Rendered Server Side
-3. Communication Between Models can be Improved, Possibly with the User of Interfaces
+2. Components That React to User Interaction Should not be *Only* be Rendered Server Side. They Must be Reproduced in Raw JavaScript
+3. ~~Communication Between Models can be Improved, Possibly with the User of Interfaces~~ Existing Models Refactored in To Services and Project Moved to an MVC Framework
 4. Cart is Missing Features (Delete, Checkout)
 # Research
 
@@ -171,7 +178,7 @@ The following routes are using ejs for non-static elements and need to be fixed:
 
 - [x] Home
 - [x] Book View
-- [ ] Reviews
+- [x] Reviews
 - [ ] User-Panel
 - [ ] Cart
 ### Home
@@ -187,7 +194,7 @@ The book card is rendered from the backend, this will complicate adding cart ico
 Iirc the review component is one piece with the entree field and reviews itself. Split reviews into a api call to a rendered ejs file which queries the backend and have the review addition field be it's own thing.
 
 - [x] Adding reviews as manual post requests instead of forms.
-- [ ] Fetching all reviews as get requests instead of server side rendering.
+- [x] Fetching all reviews as get requests instead of server side rendering.
 ### User panel.
 
 Table is rendered from the back-end requiring full page refreshes when deleting users. Instead, server this from an api.
@@ -237,10 +244,10 @@ const cartNum = document.getElementById("cart-size");
   }
 ```
 
-**NOTE**: This approach ==does not work==. Scripts not present when the page is 
+**NOTE**: This approach ==does not work==. Scripts not present when the page is pulled in via Template.
 ## Category Sorting
 
-No idea bra
+No idea bra. Never mind I'm cracked
 ## Express Routers
 
 Maybe express routers is the solution to splitting up the project into different files?
