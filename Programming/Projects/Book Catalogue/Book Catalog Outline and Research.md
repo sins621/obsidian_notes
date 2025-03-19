@@ -255,4 +255,4 @@ Maybe express routers is the solution to splitting up the project into different
 
 Test if `req.user.isAuthenticated()` can be used to protect endpoints. 
 
-This does not seem to work.
+This does not seem to work. That's because it's actually `req.isAuthenticated()`. Nice one dude.
