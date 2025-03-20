@@ -158,6 +158,21 @@ The `accumulator` holds the result of the last iteration and is used for in the 
 
 This method can be used to return the first occurrence in an array that matches the specified condition.
 
+Let's say we want to find the first even number in an array:
+
+```javascript
+const numbers = [1, 3, 5, 6, 9, 10];
+
+const firstEvenNumber = numbers.find((number) => {
+	return number % 2 === 0;
+})
+
+console.log(firstEvenNumber);
+// 6
+```
+
+We can also return `true` or `false` in the event that we want do do more complex logic within the function:
+
 ```javascript
 const numbers = [1, 4, 9, 11, 15, 28, 33, 36]
 
@@ -177,6 +192,21 @@ console.log(firstPrimeNumber);
 // 11
 ```
 
+In other words, the value at the current iteration is returned if the value that is returned from the function at that iteration is `true` and iterations will cease.
 
+## `FindIndex`
 
+Finally we have `findIndex()`. This method acts in a similar manner as `find()` however instead of returning the first value in the array that matches the index, this method will return the *index* of that first element that matches the condition.
 
+```javascript
+const numbers = [1, 3, 5, 6, 9, 10];
+
+const firstEvenNumber = numbers.findIndex((number) => {
+	return number % 2 === 0;
+})
+
+console.log(firstEvenNumber);
+// 3
+```
+
+Reusing our even number example you can see that the value returned is the index of the first even number which is 3.
