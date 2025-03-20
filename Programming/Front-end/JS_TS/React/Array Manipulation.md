@@ -59,10 +59,9 @@ numbers.reduce((accumulator, number) => {
 	console.log(`Number: ${number}`);
 	return;
 })
-```
-
-```output
-Accumulator: Number: 3
+/*
+Accumulator: 1
+Number: 3
 Accumulator: undefined
 Number: 4
 Accumulator: undefined
@@ -79,7 +78,6 @@ Accumulator: undefined
 Number: 33
 Accumulator: undefined
 Number: 36
-1
 ```
 
 
@@ -95,9 +93,7 @@ numbers.reduce((accumulator, number) => {
 	console.log(`Number: ${number}`);
 	return accumulator;
 })
-```
-
-```output
+/*
 Accumulator: 1
 Number: 3
 Accumulator: 1
@@ -116,6 +112,7 @@ Accumulator: 1
 Number: 33
 Accumulator: 1
 Number: 36
+*/
 ```
 
 
@@ -131,9 +128,7 @@ const sumOfNumbers = numbers.reduce((accumulator, number) => {
 })
 
 console.log(`The sum of numbers is ${sumOfNumbers}`);
-```
-
-```output
+/*
 Accumulator: 1
 Number: 3
 Accumulator: 4
@@ -153,6 +148,7 @@ Number: 33
 Accumulator: 111
 Number: 36
 The sum of numbers is 147
+*/
 ```
 
 
@@ -178,10 +174,9 @@ const firstPrimeNumber = numbers.find((number) => {
 });
 
 console.log(firstPrimeNumber);
+// 11
 ```
 
-```output
-11
-```
+
 
 
