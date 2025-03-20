@@ -1,5 +1,5 @@
 {
-  "lastOpenLanguageTab": "python",
+  "lastOpenLanguageTab": "js",
   "releaseNote2_1_0wasShowed": true,
   "persistentOuput": false,
   "timeout": 10000,
@@ -7,7 +7,7 @@
   "wslMode": false,
   "shellWSLMode": false,
   "onlyCurrentBlock": false,
-  "nodePath": "node",
+  "nodePath": "/home/sins/.nvm/versions/node/v22.14.0/bin/node",
   "nodeArgs": "",
   "jsFileExtension": "js",
   "jsInject": "",
