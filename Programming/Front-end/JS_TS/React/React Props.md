@@ -1,3 +1,5 @@
+# React Props
+
 React properties or 'Props' allow us to create usable components by making information on these components modifiable when it is reused.
 
 Say we have the following code:

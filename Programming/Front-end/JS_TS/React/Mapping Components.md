@@ -1,3 +1,5 @@
+# Mapping Components
+
 Part of the usefulness of reusable components is the ability to reduce repetition in our code when we'd like to display multiple of the same component. In [React Props](React%20Props.md) we created a reusable 'card' component however we as you can see in that example we are repeating the card three times:
 
 ```jsx

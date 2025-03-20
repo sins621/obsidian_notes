@@ -1,3 +1,5 @@
+# Introduction to React
+
 React is a front-end library that aims to simplify the process of building web applications for the web.
 ## Single Page Application
 
