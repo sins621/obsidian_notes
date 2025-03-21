@@ -19,25 +19,33 @@ The intent is to create a website where-by a library, or book store can show off
 	- [x] Ability to Sign up in Footer
 - [x] Breadcrumb For Book Links
 - [ ] User Management Panel
-	- [ ] View User's Highest Roles
+	- [ ] View User's Roles
+		- [x] Fetch All Users
+		- [ ] Display a Single User with Radio Buttons or Drop-down With Radio Buttons with Roles
+			- [ ] Allow Multi-Selection of Roles
+			- [ ] Include All Roles
+			- [ ] Set Roles a User Has to Checked
 	- [ ] Delete Users
 	- [ ] Manually Add Users
 - [ ] Logging
 - [ ] Add Orders Tables
 	- [ ] Users Need to be Able to Checkout Their Carts
 - [ ] Add Sold Table
+	- [ ] Administrator's Need to Be Able to Update Order Status
+		- [ ] Orders Panel
 - [ ] Add Panel to Mark Orders as Completed
 - [ ] Refine `databaseService.js` error handling.
 - [ ] Style Website
 - [ ] Add Visual Indicators to Respond to User Actions that Don't Change the Page State
 	- [ ] Signing up to the Newsletter
+- [ ] Implement a Solution to Increase Image Load Times
 ## Bugs
 
 - [ ] Logging in redirects to home instead of the last page accessed.
 ## Issues
 
 1. Multiple Roles is not Implemented Correctly. Fundamental Design Flaw in How Records are Updated and Included.
-2. Components That React to User Interaction Should not be *Only* be Rendered Server Side. They Must be Reproduced in Raw JavaScript
+2. ~~Components That React to User Interaction Should not be *Only* be Rendered Server Side. They Must be Reproduced in Raw JavaScript~~
 3. ~~Communication Between Models can be Improved, Possibly with the User of Interfaces~~ Existing Models Refactored in To Services and Project Moved to an MVC Framework
 4. Cart is Missing Features (Delete, Checkout)
 # Research
